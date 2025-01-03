@@ -46,17 +46,18 @@
 
     </RelativeLayout>
 
+
     <Button
-        android:id="@+id/btnChess"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/txtChess2Go"
+        android:id="@+id/btnOpenings"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
-        android:text="Chess"
-        android:onClick="openChess"
+        android:layout_below="@id/txtChess2Go"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:text="Openings"
+        android:onClick="openOpenings"
         />
 
     <RelativeLayout
@@ -65,25 +66,16 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:layout_below="@id/btnChess"
-        >
+        android:layout_below="@id/btnOpenings">
 
-        <Button
-            android:id="@+id/btnOpenings"
-            style="?attr/materialButtonOutlinedStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Openings"
-            android:onClick="openOpenings"
-            />
+
 
         <Button
             android:id="@+id/btnCheckmates"
             style="?attr/materialButtonOutlinedStyle"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_toRightOf="@id/btnOpenings"
             android:text="Checkmates"
             android:onClick="openCheckmates"
             />
@@ -91,7 +83,7 @@
         <Button
             android:id="@+id/btnTactics"
             style="?attr/materialButtonOutlinedStyle"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_toRightOf="@id/btnCheckmates"
