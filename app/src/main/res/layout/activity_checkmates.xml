@@ -5,6 +5,51 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/darkGray"
+    android:padding="40dp"
     tools:context=".CheckmatesActivity">
+
+    <ImageView
+        android:id="@+id/imgBackButton"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/back_button"
+        app:layout_constraintBottom_toBottomOf="@+id/imgTouchTarget"
+        app:layout_constraintEnd_toEndOf="@+id/imgTouchTarget"
+        app:layout_constraintStart_toStartOf="@+id/imgTouchTarget"
+        app:layout_constraintTop_toTopOf="@+id/imgTouchTarget" />
+
+    <ImageView
+        android:id="@+id/imgTouchTarget"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:alpha="0"
+        android:onClick="backToMenu"
+        android:src="@drawable/back_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtCheckmates"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="Checkmates"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnQueenMate"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:onClick="openQueenCheckmate"
+        android:text="Queen Mate"
+        android:layout_marginTop="150dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
