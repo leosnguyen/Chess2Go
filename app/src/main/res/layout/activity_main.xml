@@ -26,14 +26,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp">
+        android:layout_marginTop="250dp"
+        android:layout_marginBottom="70dp">
 
         <ImageView
             android:id="@+id/imgRoundedSquare"
             android:layout_width="325dp"
             android:layout_height="310dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="300dp"
             android:src="@drawable/rounded_square"/>
 
         <ImageView
@@ -41,7 +41,6 @@
             android:layout_width="300dp"
             android:layout_height="300dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="300dp"
             android:src="@drawable/chess2go"
             />
 

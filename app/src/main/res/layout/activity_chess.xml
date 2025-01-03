@@ -16,58 +16,9 @@
         android:layout_centerInParent="true">
 
         <RelativeLayout
-            android:id="@+id/relLayoutWhitePieces"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:id="@+id/imgWhitePawn"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:src="@drawable/wp" />
-
-            <ImageView
-                android:id="@+id/imgWhiteBishop"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_toRightOf="@+id/imgWhitePawn"
-                android:src="@drawable/wb" />
-
-            <ImageView
-                android:id="@+id/imgWhiteKnight"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_toRightOf="@+id/imgWhiteBishop"
-                android:src="@drawable/wn" />
-
-            <ImageView
-                android:id="@+id/imgWhiteRook"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_toRightOf="@+id/imgWhiteKnight"
-                android:src="@drawable/wr" />
-
-            <ImageView
-                android:id="@+id/imgWhiteQueen"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_toRightOf="@+id/imgWhiteRook"
-                android:src="@drawable/wq" />
-
-            <ImageView
-                android:id="@+id/imgWhiteKing"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_toRightOf="@+id/imgWhiteQueen"
-                android:src="@drawable/wk" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
             android:id="@+id/relLayoutBlackPieces"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="700dp">
+            android:layout_height="wrap_content">
 
 
             <ImageView
@@ -113,6 +64,55 @@
 
         </RelativeLayout>
 
+        <RelativeLayout
+            android:id="@+id/relLayoutWhitePieces"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="500dp">
+
+            <ImageView
+                android:id="@+id/imgWhitePawn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/wp" />
+
+            <ImageView
+                android:id="@+id/imgWhiteBishop"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_toRightOf="@+id/imgWhitePawn"
+                android:src="@drawable/wb" />
+
+            <ImageView
+                android:id="@+id/imgWhiteKnight"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_toRightOf="@+id/imgWhiteBishop"
+                android:src="@drawable/wn" />
+
+            <ImageView
+                android:id="@+id/imgWhiteRook"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_toRightOf="@+id/imgWhiteKnight"
+                android:src="@drawable/wr" />
+
+            <ImageView
+                android:id="@+id/imgWhiteQueen"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_toRightOf="@+id/imgWhiteRook"
+                android:src="@drawable/wq" />
+
+            <ImageView
+                android:id="@+id/imgWhiteKing"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_toRightOf="@+id/imgWhiteQueen"
+                android:src="@drawable/wk" />
+
+        </RelativeLayout>
+
     </RelativeLayout>
 
     <LinearLayout
@@ -127,6 +127,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <ImageView android:id="@+id/squareA8" android:layout_width="50dp" android:layout_height="50dp" android:src="@drawable/a8"/>
             <ImageView android:id="@+id/squareB8" android:layout_width="50dp" android:layout_height="50dp" android:src="@drawable/b8"/>
             <ImageView android:id="@+id/squareC8" android:layout_width="50dp" android:layout_height="50dp" android:src="@drawable/c8"/>
