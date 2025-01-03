@@ -1,19 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/darkGray">
 
     <TextView
+        android:id="@+id/txtChess2Go"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/relLayoutMainIcon"
+        android:text="chess2go"
+        android:textColor="@color/white"
+        android:textSize="60sp"
+        android:textStyle="normal"
+        android:fontFamily="@font/roboto"
+        />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:id="@+id/relLayoutMainIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp">
+
+        <ImageView
+            android:id="@+id/imgRoundedSquare"
+            android:layout_width="325dp"
+            android:layout_height="310dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="300dp"
+            android:src="@drawable/rounded_square"/>
+
+        <ImageView
+            android:id="@+id/imgChess2Go"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="300dp"
+            android:src="@drawable/chess2go"
+            />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btnChess"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtChess2Go"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:text="Chess"
+        android:onClick="openChess"
+        />
+
+    <RelativeLayout
+        android:id="@+id/relLayoutMainButtons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/btnChess"
+        >
+
+        <Button
+            android:id="@+id/btnOpenings"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Openings"
+            android:onClick="openOpenings"
+            />
+
+        <Button
+            android:id="@+id/btnCheckmates"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_toRightOf="@id/btnOpenings"
+            android:text="Checkmates"
+            android:onClick="openCheckmates"
+            />
+
+        <Button
+            android:id="@+id/btnTactics"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_toRightOf="@id/btnCheckmates"
+            android:text="Tactics"
+            android:onClick="openTactics"
+            />
+
+    </RelativeLayout>
+
+</RelativeLayout>
