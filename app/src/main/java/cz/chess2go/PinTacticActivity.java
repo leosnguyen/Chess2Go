@@ -10,13 +10,13 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class OpeningsActivity extends AppCompatActivity {
+public class PinTacticActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_openings);
+        setContentView(R.layout.activity_pin_tactic);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -25,22 +25,6 @@ public class OpeningsActivity extends AppCompatActivity {
     }
 
     public void backToMenu(View view) {
-        startActivity(new Intent(this, MainActivity.class));
-    }
-
-    public void openItalianOpening(View view) {
-        startActivity(new Intent(this, ItalianOpeningActivity.class));
-    }
-
-    public void openSicilianOpening(View view) {
-        startActivity(new Intent(this, SicilianOpeningActivity.class));
-    }
-
-    public void openFrenchOpening(View view) {
-        startActivity(new Intent(this, FrenchOpeningActivity.class));
-    }
-
-    public void openRuyLopez(View view) {
-        startActivity(new Intent(this, RuyLopezOpeningActivity.class));
+        startActivity(new Intent(this, TacticsActivity.class));
     }
 }
