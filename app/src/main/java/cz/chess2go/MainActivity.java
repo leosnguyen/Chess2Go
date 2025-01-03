@@ -24,10 +24,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void openChess(View view) {
-        startActivity(new Intent(this, ChessActivity.class));
-    }
-
     public void openOpenings(View view) {
         startActivity(new Intent(this, OpeningsActivity.class));
     }

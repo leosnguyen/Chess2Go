@@ -18,6 +18,7 @@
         android:textColor="@color/white"
         android:textSize="60sp"
         android:textStyle="normal"
+        android:layout_marginBottom="40dp"
         android:fontFamily="@font/roboto"
         />
 
@@ -26,8 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="250dp"
-        android:layout_marginBottom="70dp">
+        android:layout_marginTop="250dp">
 
         <ImageView
             android:id="@+id/imgRoundedSquare"
@@ -86,7 +86,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_toRightOf="@id/btnCheckmates"
+            android:layout_toEndOf="@id/btnCheckmates"
             android:text="Tactics"
             android:onClick="openTactics"
             />
