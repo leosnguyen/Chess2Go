@@ -2,5 +2,12 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="darkGray">#1E1E1E</color>
+    <color name="dark_gray">#1E1E1E</color>
+    <color name="primary_color">#6750A3</color>
+    <color name="secondary_color">#7A64B7</color>
+    <color name="accent_color">#8E24AA</color>
+    <color name="background_light_color">#F8F9FA</color>
+    <color name="background_dark_color">#1E1E1E</color>
+    <color name="text_light_color">#333333</color>
+    <color name="text_dark_color">#F8F9FA</color>
 </resources>

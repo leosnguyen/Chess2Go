@@ -1,96 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@color/darkGray">
+    style="@style/screen" >
+
+    <ImageView
+        android:id="@+id/imgRoundedSquare"
+        android:layout_width="335dp"
+        android:layout_height="335dp"
+        android:contentDescription="@string/desc_rounded_square"
+        android:padding="35dp"
+        android:alpha="0.3"
+        android:background="@drawable/rounded_square"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.35" />
+
+    <ImageView
+        android:id="@+id/imgChess2Go"
+        android:layout_width="315dp"
+        android:layout_height="315dp"
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toBottomOf="@+id/imgRoundedSquare"
+        app:layout_constraintEnd_toEndOf="@+id/imgRoundedSquare"
+        app:layout_constraintStart_toStartOf="@+id/imgRoundedSquare"
+        app:layout_constraintTop_toTopOf="@+id/imgRoundedSquare"
+        app:srcCompat="@drawable/chess2go" />
 
     <TextView
-        android:id="@+id/txtChess2Go"
+        android:id="@+id/txtTitleChess2Go"
+        style="@style/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/relLayoutMainIcon"
-        android:text="chess2go"
-        android:textColor="@color/white"
+        android:fontFamily="@font/roboto"
+        android:text="@string/title_activity_main"
         android:textSize="60sp"
         android:textStyle="normal"
-        android:layout_marginBottom="40dp"
-        android:fontFamily="@font/roboto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgRoundedSquare" />
+
+    <Button
+        android:id="@+id/btnChess"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:text="@string/text_chess"
+        android:textColor="@color/white"
+        app:backgroundTint="@color/primary_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imgChess2Go"
+        app:layout_constraintStart_toStartOf="@+id/imgChess2Go"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitleChess2Go"
+        app:layout_constraintVertical_bias="0.25"
         />
-
-    <RelativeLayout
-        android:id="@+id/relLayoutMainIcon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="250dp">
-
-        <ImageView
-            android:id="@+id/imgRoundedSquare"
-            android:layout_width="325dp"
-            android:layout_height="310dp"
-            android:layout_centerHorizontal="true"
-            android:src="@drawable/rounded_square"/>
-
-        <ImageView
-            android:id="@+id/imgChess2Go"
-            android:layout_width="300dp"
-            android:layout_height="300dp"
-            android:layout_centerHorizontal="true"
-            android:src="@drawable/chess2go"
-            />
-
-    </RelativeLayout>
-
 
     <Button
         android:id="@+id/btnOpenings"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
-        android:layout_below="@id/txtChess2Go"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:text="Openings"
-        android:onClick="openOpenings"
-        />
-
-    <RelativeLayout
-        android:id="@+id/relLayoutMainButtons"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:layout_below="@id/btnOpenings">
+        android:layout_marginEnd="5dp"
+        android:text="@string/text_openings"
+        app:layout_constraintEnd_toStartOf="@+id/btnCheckmates"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/btnChess"
+        app:layout_constraintTop_toBottomOf="@+id/btnChess"
+        android:onClick="openOpeningsMenu"
+        style="?attr/materialButtonOutlinedStyle" />
 
+    <Button
+        android:id="@+id/btnCheckmates"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="@string/text_checkmates"
+        app:layout_constraintEnd_toEndOf="@+id/btnChess"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnOpenings"
+        app:layout_constraintTop_toBottomOf="@+id/btnChess"
+        style="?attr/materialButtonOutlinedStyle" />
 
+    <Button
+        android:id="@+id/btnTactics"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:text="@string/text_tactics"
+        app:layout_constraintEnd_toStartOf="@+id/btnPuzzles"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/btnChess"
+        app:layout_constraintTop_toBottomOf="@+id/btnOpenings"
+        style="?attr/materialButtonOutlinedStyle" />
 
-        <Button
-            android:id="@+id/btnCheckmates"
-            style="?attr/materialButtonOutlinedStyle"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:text="Checkmates"
-            android:onClick="openCheckmates"
-            />
+    <Button
+        android:id="@+id/btnPuzzles"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="@string/text_puzzles"
+        app:layout_constraintEnd_toEndOf="@+id/btnChess"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnTactics"
+        app:layout_constraintTop_toBottomOf="@+id/btnCheckmates"
+        style="?attr/materialButtonOutlinedStyle" />
 
-        <Button
-            android:id="@+id/btnTactics"
-            style="?attr/materialButtonOutlinedStyle"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_toEndOf="@id/btnCheckmates"
-            android:text="Tactics"
-            android:onClick="openTactics"
-            />
-
-    </RelativeLayout>
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

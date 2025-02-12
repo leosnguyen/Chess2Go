@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    style="@style/screen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OpeningsMenuActivity">
+
+    <ImageButton
+        android:id="@+id/backButton"
+        style="@style/back_button"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/btn_back"
+        android:onClick="backToMenu"
+        android:padding="8dp"
+        android:src="@drawable/back_arrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtTitleOpenings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/text_openings"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backButton" />
+
+    <Button
+        android:id="@+id/btnOpeningKingsPawn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="5dp"
+        android:text="@string/btn_opening_kings_pawn"
+        app:layout_constraintEnd_toStartOf="@+id/btnOpeningQueensGambit"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitleOpenings" />
+
+    <Button
+        android:id="@+id/btnOpeningQueensGambit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="25dp"
+        android:text="@string/btn_opening_queens_gambit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnOpeningKingsPawn"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitleOpenings" />
+
+    <Button
+        android:id="@+id/btnOpeningSicilian"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="5dp"
+        android:text="@string/btn_opening_sicilian"
+        app:layout_constraintEnd_toStartOf="@+id/btnOpeningFrench"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnOpeningKingsPawn" />
+
+    <Button
+        android:id="@+id/btnOpeningFrench"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="25dp"
+        android:text="@string/btn_opening_french"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnOpeningSicilian"
+        app:layout_constraintTop_toBottomOf="@+id/btnOpeningQueensGambit" />
+
+    <Button
+        android:id="@+id/btnOpeningRuyLopez"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="5dp"
+        android:text="@string/btn_opening_ruy_lopez"
+        app:layout_constraintEnd_toStartOf="@+id/btnOpeningSlav"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnOpeningSicilian" />
+
+    <Button
+        android:id="@+id/btnOpeningSlav"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="25dp"
+        android:text="@string/btn_opening_slav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnOpeningRuyLopez"
+        app:layout_constraintTop_toBottomOf="@+id/btnOpeningFrench" />
+
+    <Button
+        android:id="@+id/btnOpeningCaroKann"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="5dp"
+        android:text="@string/btn_opening_caro_kann"
+        app:layout_constraintEnd_toStartOf="@+id/btnOpeningItalian"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnOpeningRuyLopez" />
+
+    <Button
+        android:id="@+id/btnOpeningItalian"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="25dp"
+        android:text="@string/btn_opening_italian"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnOpeningCaroKann"
+        app:layout_constraintTop_toBottomOf="@+id/btnOpeningSlav" />
+
+    <Button
+        android:id="@+id/btnOpeningKingsIndian"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="5dp"
+        android:text="@string/btn_opening_kings_indian"
+        app:layout_constraintEnd_toStartOf="@+id/btnOpeningEnglish"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnOpeningCaroKann" />
+
+    <Button
+        android:id="@+id/btnOpeningEnglish"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="25dp"
+        android:text="@string/btn_opening_english"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnOpeningKingsIndian"
+        app:layout_constraintTop_toBottomOf="@+id/btnOpeningItalian" />
+
+    <Button
+        android:id="@+id/btnOpeningNimzoIndian"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="5dp"
+        android:text="@string/btn_opening_nimzo_indian"
+        app:layout_constraintEnd_toStartOf="@+id/btnOpeningPirc"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnOpeningKingsIndian" />
+
+    <Button
+        android:id="@+id/btnOpeningPirc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="25dp"
+        android:text="@string/btn_opening_pirc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnOpeningNimzoIndian"
+        app:layout_constraintTop_toBottomOf="@+id/btnOpeningEnglish" />
+
+    <Button
+        android:id="@+id/btnOpeningPetrov"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="5dp"
+        android:text="@string/btn_opening_petrov"
+        app:layout_constraintEnd_toStartOf="@+id/btnOpeningGrunfeld"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnOpeningNimzoIndian" />
+
+    <Button
+        android:id="@+id/btnOpeningGrunfeld"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="25dp"
+        android:text="@string/btn_opening_grunfeld"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnOpeningPetrov"
+        app:layout_constraintTop_toBottomOf="@+id/btnOpeningPirc" />
+
+    <Button
+        android:id="@+id/btnOpeningBenoni"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="5dp"
+        android:text="@string/btn_opening_benoni"
+        app:layout_constraintEnd_toStartOf="@+id/btnOpeningDutch"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnOpeningPetrov" />
+
+    <Button
+        android:id="@+id/btnOpeningDutch"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="25dp"
+        android:text="@string/btn_opening_dutch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnOpeningBenoni"
+        app:layout_constraintTop_toBottomOf="@+id/btnOpeningGrunfeld" />
+
+    <Button
+        android:id="@+id/btnOpeningScotch"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="5dp"
+        android:text="@string/btn_opening_scotch"
+        app:layout_constraintEnd_toStartOf="@+id/btnOpeningReti"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnOpeningBenoni" />
+
+    <Button
+        android:id="@+id/btnOpeningReti"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="25dp"
+        android:text="@string/btn_opening_reti"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnOpeningScotch"
+        app:layout_constraintTop_toBottomOf="@+id/btnOpeningDutch" />
+
+    <Button
+        android:id="@+id/btnOpeningAlekhine"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="5dp"
+        android:text="@string/btn_opening_alekhine"
+        app:layout_constraintEnd_toStartOf="@+id/btnOpeningTarrasch"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnOpeningScotch" />
+
+    <Button
+        android:id="@+id/btnOpeningTarrasch"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="25dp"
+        android:text="@string/btn_opening_tarrasch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnOpeningAlekhine"
+        app:layout_constraintTop_toBottomOf="@+id/btnOpeningReti" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

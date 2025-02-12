@@ -1,3 +1,35 @@
 <resources>
     <string name="app_name">Chess2Go</string>
+    <string name="title_activity_main">chess2go</string>
+
+    <string name="text_chess">Chess</string>
+    <string name="text_openings">Openings</string>
+    <string name="text_checkmates">Checkmates</string>
+    <string name="text_tactics">Tactics</string>
+    <string name="text_puzzles">Puzzles</string>
+
+    <string name="desc_rounded_square">Puzzles</string>
+
+    <string name="btn_back">Puzzles</string>
+    <string name="btn_opening_kings_pawn">King\'s Pawn Opening</string>
+    <string name="btn_opening_queens_gambit">Queen\'s Gambit</string>
+    <string name="btn_opening_sicilian">Sicilian Defense</string>
+    <string name="btn_opening_french">French Defense</string>
+    <string name="btn_opening_ruy_lopez">Ruy-Lopez</string>
+    <string name="btn_opening_slav">Slav Defense</string>
+    <string name="btn_opening_caro_kann">Caro-Kann Defense</string>
+    <string name="btn_opening_italian">Italian Game</string>
+    <string name="btn_opening_kings_indian">King\'s Indian Defense</string>
+    <string name="btn_opening_english">English Opening</string>
+    <string name="btn_opening_nimzo_indian">Nimzo-Indian Defense</string>
+    <string name="btn_opening_pirc">Pirc Defense</string>
+    <string name="btn_opening_petrov">Petrov\'s Defense</string>
+    <string name="btn_opening_grunfeld">Grünfeld Defense</string>
+    <string name="btn_opening_benoni">Benoni Defense</string>
+    <string name="btn_opening_dutch">Dutch Defense</string>
+    <string name="btn_opening_scotch">Scotch Game</string>
+    <string name="btn_opening_reti">Reti Opening</string>
+    <string name="btn_opening_alekhine">Alekhine Defense</string>
+    <string name="btn_opening_tarrasch">Tarrasch Defense</string>
+
 </resources>
