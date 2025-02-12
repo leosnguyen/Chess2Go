@@ -3,19 +3,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
+    style="@style/screen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    style="@style/screen" >
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imgMenu"
+        style="@style/arrow_button"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/menu" />
 
     <ImageView
         android:id="@+id/imgRoundedSquare"
         android:layout_width="335dp"
         android:layout_height="335dp"
-        android:contentDescription="@string/desc_rounded_square"
+        android:alpha="0.1"
+        android:background="@drawable/rounded_square_bg"
         android:padding="35dp"
-        android:alpha="0.3"
-        android:background="@drawable/rounded_square"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,7 +36,6 @@
         android:id="@+id/imgChess2Go"
         android:layout_width="315dp"
         android:layout_height="315dp"
-        android:importantForAccessibility="no"
         app:layout_constraintBottom_toBottomOf="@+id/imgRoundedSquare"
         app:layout_constraintEnd_toEndOf="@+id/imgRoundedSquare"
         app:layout_constraintStart_toStartOf="@+id/imgRoundedSquare"
@@ -46,6 +55,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgRoundedSquare" />
 
+    <TextView
+        android:id="@+id/txtDomain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_domain_main"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txtTitleChess2Go"
+        app:layout_constraintStart_toEndOf="@+id/txtTitleChess2Go" />
+
     <Button
         android:id="@+id/btnChess"
         android:layout_width="0dp"
@@ -57,24 +74,24 @@
         app:layout_constraintEnd_toEndOf="@+id/imgChess2Go"
         app:layout_constraintStart_toStartOf="@+id/imgChess2Go"
         app:layout_constraintTop_toBottomOf="@+id/txtTitleChess2Go"
-        app:layout_constraintVertical_bias="0.25"
-        />
+        app:layout_constraintVertical_bias="0.25" />
 
     <Button
         android:id="@+id/btnOpenings"
+        style="?attr/materialButtonOutlinedStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="5dp"
+        android:onClick="openOpeningsMenu"
         android:text="@string/text_openings"
         app:layout_constraintEnd_toStartOf="@+id/btnCheckmates"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/btnChess"
-        app:layout_constraintTop_toBottomOf="@+id/btnChess"
-        android:onClick="openOpeningsMenu"
-        style="?attr/materialButtonOutlinedStyle" />
+        app:layout_constraintTop_toBottomOf="@+id/btnChess" />
 
     <Button
         android:id="@+id/btnCheckmates"
+        style="?attr/materialButtonOutlinedStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
@@ -82,11 +99,11 @@
         app:layout_constraintEnd_toEndOf="@+id/btnChess"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btnOpenings"
-        app:layout_constraintTop_toBottomOf="@+id/btnChess"
-        style="?attr/materialButtonOutlinedStyle" />
+        app:layout_constraintTop_toBottomOf="@+id/btnChess" />
 
     <Button
         android:id="@+id/btnTactics"
+        style="?attr/materialButtonOutlinedStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="5dp"
@@ -94,11 +111,11 @@
         app:layout_constraintEnd_toStartOf="@+id/btnPuzzles"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/btnChess"
-        app:layout_constraintTop_toBottomOf="@+id/btnOpenings"
-        style="?attr/materialButtonOutlinedStyle" />
+        app:layout_constraintTop_toBottomOf="@+id/btnOpenings" />
 
     <Button
         android:id="@+id/btnPuzzles"
+        style="?attr/materialButtonOutlinedStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
@@ -106,7 +123,6 @@
         app:layout_constraintEnd_toEndOf="@+id/btnChess"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btnTactics"
-        app:layout_constraintTop_toBottomOf="@+id/btnCheckmates"
-        style="?attr/materialButtonOutlinedStyle" />
+        app:layout_constraintTop_toBottomOf="@+id/btnCheckmates" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

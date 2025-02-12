@@ -11,7 +11,7 @@
     </style>
 
     <style name="text">
-        <item name="android:text">@color/text_dark_color</item>
+        <item name="android:text">@color/text_dark_mode_color</item>
     </style>
 
     <style name="button">
@@ -19,8 +19,13 @@
         <item name="android:textColor">@color/white</item>
     </style>
 
-    <style name="back_button">
-        <item name="android:tint">@color/white</item>
+    <style name="secondary_button">
+        <item name="android:background">@color/button_background_secondary_color</item>
+        <item name="android:textColor">@color/button_text_secondary_color</item>
+    </style>
+
+    <style name="arrow_button">
+        <item name="android:tint">@color/text_dark_mode_color</item>
     </style>
 
     <style name="Theme.Chess2Go" parent="Base.Theme.Chess2Go" />

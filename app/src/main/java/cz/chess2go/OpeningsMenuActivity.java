@@ -4,12 +4,17 @@ import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class OpeningsMenuActivity extends AppCompatActivity {
 
@@ -23,6 +28,40 @@ public class OpeningsMenuActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        Button btnOpeningKingsPawn = findViewById(R.id.btnOpeningKingsPawn);
+        Button btnOpeningQueensGambit = findViewById(R.id.btnOpeningQueensGambit);
+        Button btnOpeningSicilian = findViewById(R.id.btnOpeningSicilian);
+        Button btnOpeningFrench = findViewById(R.id.btnOpeningFrench);
+
+        String descOpeningKingsPawn = getString(R.string.text_kings_pawn);
+        String descOpeningQueensGambit = getString(R.string.text_queens_gambit);
+        String descOpeningSicilian = getString(R.string.text_sicilian);
+        String descOpeningFrench = getString(R.string.text_french);
+
+        btnOpeningKingsPawn.setOnClickListener(v -> openOpening("King's Pawn Opening", Arrays.asList(
+                R.drawable.starting_position,
+                R.drawable.kings_pawn_1)));
+        btnOpeningQueensGambit.setOnClickListener(v -> openOpening("Queen's Gambit", Arrays.asList(
+                R.drawable.starting_position,
+                R.drawable.queens_gambit_1,
+                R.drawable.queens_gambit_2,
+                R.drawable.queens_gambit_3)));
+        btnOpeningSicilian.setOnClickListener(v -> openOpening("Sicilian Defense", Arrays.asList(
+                R.drawable.starting_position,
+                R.drawable.sicilian_1,
+                R.drawable.sicilian_2)));
+        btnOpeningFrench.setOnClickListener(v -> openOpening("French Defense", Arrays.asList(
+                R.drawable.starting_position,
+                R.drawable.french_1,
+                R.drawable.french_2)));
+    }
+
+    private void openOpening(String title, List<Integer> imageResIds) {
+        Intent intent = new Intent(this, OpeningDetailActivity.class);
+        intent.putExtra("title", title);
+        intent.putIntegerArrayListExtra("imageResIds", new ArrayList<>(imageResIds));
+        startActivity(intent);
     }
 
     public void backToMenu(View view) {
@@ -34,6 +73,4 @@ public class OpeningsMenuActivity extends AppCompatActivity {
         );
         startActivity(intent, options.toBundle());
     }
-
-    // TODO: Interface for each opening
 }

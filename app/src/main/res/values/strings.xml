@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Chess2Go</string>
     <string name="title_activity_main">chess2go</string>
+    <string name="text_domain_main">.cz</string>
 
     <string name="text_chess">Chess</string>
     <string name="text_openings">Openings</string>
@@ -8,28 +9,36 @@
     <string name="text_tactics">Tactics</string>
     <string name="text_puzzles">Puzzles</string>
 
+    <string name="text_kings_pawn">The ancient King Pawn opening, "best by test" according to Bobby Fischer and perhaps the oldest first move in the modern version of chess. This is the most aggressive and most attacking first move because it immediately stakes a claim to the center and frees up the queen and king bishop.</string>
+    <string name="text_queens_gambit">The Queen\'s Gambit is one of the oldest and most reputable 1.d4 openings for White. Unlike 1.e4 openings, the Queen\'s Gambit usually evolves into a strategic game rather than an all-out tactical battle. Despite being around for centuries, this opening is still one of the cornerstones of every elite players\' repertoire. It\'s also an excellent choice for beginners and intermediate players.</string>
+    <string name="text_sicilian">The Sicilian Defense is the most popular response to White\'s 1.e4. Employed by masters and beginners alike, the Sicilian Defense is a reputable and positionally sound opening. Still, the Sicilian is a combative opening that tends to lead to dynamic and sharp positions.</string>
+    <string name="text_french">The French Defense is one of the most popular Black responses to 1.e4. It has consistently been a part of masters\' repertoire since the 1800s and one of the favorites of positional players. Usually leading to slower games, this opening is a good choice for players of all levels.</string>
+
+
     <string name="desc_rounded_square">Puzzles</string>
 
     <string name="btn_back">Puzzles</string>
-    <string name="btn_opening_kings_pawn">King\'s Pawn Opening</string>
-    <string name="btn_opening_queens_gambit">Queen\'s Gambit</string>
-    <string name="btn_opening_sicilian">Sicilian Defense</string>
-    <string name="btn_opening_french">French Defense</string>
-    <string name="btn_opening_ruy_lopez">Ruy-Lopez</string>
-    <string name="btn_opening_slav">Slav Defense</string>
-    <string name="btn_opening_caro_kann">Caro-Kann Defense</string>
-    <string name="btn_opening_italian">Italian Game</string>
-    <string name="btn_opening_kings_indian">King\'s Indian Defense</string>
-    <string name="btn_opening_english">English Opening</string>
-    <string name="btn_opening_nimzo_indian">Nimzo-Indian Defense</string>
-    <string name="btn_opening_pirc">Pirc Defense</string>
-    <string name="btn_opening_petrov">Petrov\'s Defense</string>
-    <string name="btn_opening_grunfeld">Grünfeld Defense</string>
-    <string name="btn_opening_benoni">Benoni Defense</string>
-    <string name="btn_opening_dutch">Dutch Defense</string>
-    <string name="btn_opening_scotch">Scotch Game</string>
-    <string name="btn_opening_reti">Reti Opening</string>
-    <string name="btn_opening_alekhine">Alekhine Defense</string>
-    <string name="btn_opening_tarrasch">Tarrasch Defense</string>
+    <string name="btn_backward">&lt;</string>
+    <string name="btn_forward">&gt;</string>
 
+    <string name="btn_opening_kings_pawn">King\'s Pawn</string>
+    <string name="btn_opening_queens_gambit">Queen\'s Gambit</string>
+    <string name="btn_opening_sicilian">Sicilian</string>
+    <string name="btn_opening_french">French</string>
+    <string name="btn_opening_ruy_lopez">Ruy-Lopez</string>
+    <string name="btn_opening_slav">Slav</string>
+    <string name="btn_opening_caro_kann">Caro-Kann</string>
+    <string name="btn_opening_italian">Italian</string>
+    <string name="btn_opening_kings_indian">King\'s Indian</string>
+    <string name="btn_opening_english">English</string>
+    <string name="btn_opening_nimzo_indian">Nimzo-Indian</string>
+    <string name="btn_opening_pirc">Pirc</string>
+    <string name="btn_opening_petrov">Petrov</string>
+    <string name="btn_opening_grunfeld">Grünfeld</string>
+    <string name="btn_opening_benoni">Benoni</string>
+    <string name="btn_opening_dutch">Dutch</string>
+    <string name="btn_opening_scotch">Scotch</string>
+    <string name="btn_opening_reti">Réti</string>
+    <string name="btn_opening_alekhine">Alekhine</string>
+    <string name="btn_opening_tarrasch">Tarrasch</string>
 </resources>

@@ -13,40 +13,10 @@
         android:theme="@style/Theme.Chess2Go"
         tools:targetApi="31">
         <activity
+            android:name=".OpeningDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".OpeningsMenuActivity"
-            android:exported="false" />
-        <activity
-            android:name=".QueenMateCheckmateActivity"
-            android:exported="false" />
-        <activity
-            android:name=".PinTacticActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ForkTacticActivity"
-            android:exported="false" />
-        <activity
-            android:name=".RuyLopezOpeningActivity"
-            android:exported="false" />
-        <activity
-            android:name=".FrenchOpeningActivity"
-            android:exported="false" />
-        <activity
-            android:name=".SicilianOpeningActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ItalianOpeningActivity"
-            android:exported="false" />
-        <activity
-            android:name=".TacticsActivity"
-            android:exported="false" />
-        <activity
-            android:name=".CheckmatesActivity"
-            android:exported="false" />
-        <activity
-            android:name=".OpeningsActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ChessActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
