@@ -51,11 +51,9 @@ public class OpeningDetailActivity extends AppCompatActivity {
             imageResIds = List.of(R.drawable.default_image);
         }
 
-
         openingTitle.setText(title);
 
-
-        if (imageResIds != null && !imageResIds.isEmpty()) {
+        if (!imageResIds.isEmpty()) {
             updateImage();
         }
 
@@ -86,7 +84,7 @@ public class OpeningDetailActivity extends AppCompatActivity {
     }
 
     private void updateButtons() {
-        long animationDuration = 200;
+        long animationDuration = 150;
 
         if (currentIndex == 0) {
             backwardButton.animate().alpha(0.3f).setDuration(animationDuration).start();
@@ -108,7 +106,6 @@ public class OpeningDetailActivity extends AppCompatActivity {
             forwardButton.setBackgroundColor(ContextCompat.getColor(this, R.color.button_enabled_color));
         }
     }
-
 
     public void backToOpenings(View view) {
         Intent intent = new Intent(this, OpeningsMenuActivity.class);

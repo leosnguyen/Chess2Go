@@ -34,11 +34,6 @@ public class OpeningsMenuActivity extends AppCompatActivity {
         Button btnOpeningSicilian = findViewById(R.id.btnOpeningSicilian);
         Button btnOpeningFrench = findViewById(R.id.btnOpeningFrench);
 
-        String descOpeningKingsPawn = getString(R.string.text_kings_pawn);
-        String descOpeningQueensGambit = getString(R.string.text_queens_gambit);
-        String descOpeningSicilian = getString(R.string.text_sicilian);
-        String descOpeningFrench = getString(R.string.text_french);
-
         btnOpeningKingsPawn.setOnClickListener(v -> openOpening("King's Pawn Opening", Arrays.asList(
                 R.drawable.starting_position,
                 R.drawable.kings_pawn_1)));

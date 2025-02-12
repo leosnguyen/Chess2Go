@@ -14,8 +14,9 @@
     <string name="text_sicilian">The Sicilian Defense is the most popular response to White\'s 1.e4. Employed by masters and beginners alike, the Sicilian Defense is a reputable and positionally sound opening. Still, the Sicilian is a combative opening that tends to lead to dynamic and sharp positions.</string>
     <string name="text_french">The French Defense is one of the most popular Black responses to 1.e4. It has consistently been a part of masters\' repertoire since the 1800s and one of the favorites of positional players. Usually leading to slower games, this opening is a good choice for players of all levels.</string>
 
+    <string name="text_default_description">Default</string>
 
-    <string name="desc_rounded_square">Puzzles</string>
+    <string name="desc_rounded_square">Rounded Square</string>
 
     <string name="btn_back">Puzzles</string>
     <string name="btn_backward">&lt;</string>
