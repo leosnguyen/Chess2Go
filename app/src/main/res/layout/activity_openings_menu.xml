@@ -28,14 +28,14 @@
 
     <ImageButton
         android:id="@+id/backButton"
-        style="@style/arrow_button"
+        style="@style/icon"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:contentDescription="@string/btn_back"
         android:onClick="backToMenu"
         android:padding="8dp"
-        android:src="@drawable/back_arrow"
+        android:src="@drawable/icon_back_arrow"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

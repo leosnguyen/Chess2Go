@@ -19,7 +19,7 @@
         <item name="android:textColor">@color/white</item>
     </style>
 
-    <style name="arrow_button">
+    <style name="icon">
         <item name="android:tint">@color/text_light_mode_color</item>
     </style>
 
@@ -28,5 +28,5 @@
         <item name="cornerSize">8dp</item>
     </style>
 
-    <style name="Theme.Chess2Go" parent="Base.Theme.Chess2Go" />
+    <style name="Theme.Chess2Go" parent="Base.Theme.Chess2Go"/>
 </resources>

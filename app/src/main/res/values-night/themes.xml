@@ -24,9 +24,9 @@
         <item name="android:textColor">@color/button_text_secondary_color</item>
     </style>
 
-    <style name="arrow_button">
+    <style name="icon">
         <item name="android:tint">@color/text_dark_mode_color</item>
     </style>
 
-    <style name="Theme.Chess2Go" parent="Base.Theme.Chess2Go" />
+    <style name="Theme.Chess2Go" parent="Base.Theme.Chess2Go"/>
 </resources>
