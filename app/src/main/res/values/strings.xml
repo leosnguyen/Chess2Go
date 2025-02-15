@@ -38,7 +38,7 @@
     <string name="btn_opening_queens_gambit">Queen\'s Gambit</string>
     <string name="btn_opening_sicilian">Sicilian</string>
     <string name="btn_opening_french">French</string>
-    <string name="btn_opening_ruy_lopez">Ruy-Lopez</string>
+    <string name="btn_opening_ruy_lopez">Ruy-López</string>
     <string name="btn_opening_slav">Slav</string>
     <string name="btn_opening_caro_kann">Caro-Kann</string>
     <string name="btn_opening_italian">Italian</string>

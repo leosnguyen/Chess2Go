@@ -18,7 +18,6 @@
         android:layout_marginBottom="30dp"
         android:alpha="0.1"
         android:background="@drawable/rounded_square_bg"
-        android:importantForAccessibility="no"
         android:padding="35dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
