@@ -6,7 +6,7 @@
     style="@style/screen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="32dp"
+    android:layout_marginTop="48dp"
     android:fitsSystemWindows="true"
     tools:context=".MainActivity">
 
@@ -81,10 +81,11 @@
             app:layout_constraintStart_toEndOf="@+id/txtTitleChess2Go" />
 
         <Button
-            android:id="@+id/btnChess"
+            android:id="@+id/btnPuzzles"
             android:layout_width="0dp"
             android:layout_height="55dp"
-            android:text="@string/text_chess"
+            android:onClick="openPuzzles"
+            android:text="@string/text_puzzles"
             android:textColor="@color/white"
             app:backgroundTint="@color/primary_color"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -102,8 +103,8 @@
             android:onClick="openOpeningsMenu"
             android:text="@string/text_openings"
             app:layout_constraintEnd_toStartOf="@+id/btnCheckmates"
-            app:layout_constraintStart_toStartOf="@+id/btnChess"
-            app:layout_constraintTop_toBottomOf="@+id/btnChess" />
+            app:layout_constraintStart_toStartOf="@+id/btnPuzzles"
+            app:layout_constraintTop_toBottomOf="@+id/btnPuzzles" />
 
         <Button
             android:id="@+id/btnCheckmates"
@@ -111,10 +112,11 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
+            android:onClick="openCheckmatesMenu"
             android:text="@string/text_checkmates"
-            app:layout_constraintEnd_toEndOf="@+id/btnChess"
+            app:layout_constraintEnd_toEndOf="@+id/btnPuzzles"
             app:layout_constraintStart_toEndOf="@+id/btnOpenings"
-            app:layout_constraintTop_toBottomOf="@+id/btnChess" />
+            app:layout_constraintTop_toBottomOf="@+id/btnPuzzles" />
 
         <Button
             android:id="@+id/btnTactics"
@@ -122,19 +124,21 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="5dp"
+            android:onClick="openTacticsMenu"
             android:text="@string/text_tactics"
-            app:layout_constraintEnd_toStartOf="@+id/btnPuzzles"
-            app:layout_constraintStart_toStartOf="@+id/btnChess"
+            app:layout_constraintEnd_toStartOf="@+id/btnPieces"
+            app:layout_constraintStart_toStartOf="@+id/btnPuzzles"
             app:layout_constraintTop_toBottomOf="@+id/btnOpenings" />
 
         <Button
-            android:id="@+id/btnPuzzles"
+            android:id="@+id/btnPieces"
             style="?attr/materialButtonOutlinedStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            android:text="@string/text_puzzles"
-            app:layout_constraintEnd_toEndOf="@+id/btnChess"
+            android:onClick="openPieces"
+            android:text="@string/text_pieces"
+            app:layout_constraintEnd_toEndOf="@+id/btnPuzzles"
             app:layout_constraintStart_toEndOf="@+id/btnTactics"
             app:layout_constraintTop_toBottomOf="@+id/btnCheckmates" />
 

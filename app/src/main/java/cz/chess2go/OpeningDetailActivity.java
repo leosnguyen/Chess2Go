@@ -15,6 +15,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class OpeningDetailActivity extends AppCompatActivity {
@@ -30,7 +31,6 @@ public class OpeningDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_opening_detail);
-
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -39,19 +39,23 @@ public class OpeningDetailActivity extends AppCompatActivity {
 
         openingImage = findViewById(R.id.openingImage);
         TextView openingTitle = findViewById(R.id.openingTitle);
+        TextView openingDescription = findViewById(R.id.openingDescription);
 
         backwardButton = findViewById(R.id.backwardButton);
         forwardButton = findViewById(R.id.forwardButton);
 
         Intent intent = getIntent();
         String title = intent.getStringExtra("title");
+        String description = intent.getStringExtra("description");
         imageResIds = intent.getIntegerArrayListExtra("imageResIds");
 
         if (imageResIds == null || imageResIds.isEmpty()) {
-            imageResIds = List.of(R.drawable.default_image);
+            imageResIds = new ArrayList<>();
+            imageResIds.add(R.drawable.default_image);
         }
 
         openingTitle.setText(title);
+        openingDescription.setText(description);
 
         if (!imageResIds.isEmpty()) {
             updateImage();

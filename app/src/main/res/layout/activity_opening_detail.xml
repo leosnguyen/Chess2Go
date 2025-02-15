@@ -8,7 +8,7 @@
     tools:context=".OpeningDetailActivity">
 
     <ImageButton
-        android:id="@+id/backButton"
+        android:id="@+id/backButtonOpenings"
         style="@style/icon"
         android:layout_width="48dp"
         android:layout_height="48dp"
@@ -29,23 +29,23 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/backButton" />
+        app:layout_constraintTop_toBottomOf="@+id/backButtonOpenings" />
 
     <ImageView
         android:id="@+id/imgRoundedSquare3"
-        android:layout_width="375dp"
-        android:layout_height="375dp"
+        android:layout_width="420dp"
+        android:layout_height="420dp"
         android:layout_marginTop="15dp"
-        android:alpha="0.3"
-        android:background="@drawable/rounded_square_bg"
+        android:alpha="0.1"
+        android:background="@drawable/rounded_square_chess_window"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/openingTitle" />
 
     <ImageView
         android:id="@+id/openingImage"
-        android:layout_width="350dp"
-        android:layout_height="350dp"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
         android:layout_gravity="center"
         android:layout_margin="15dp"
         android:background="@drawable/rounded_corners"
@@ -55,6 +55,40 @@
         app:layout_constraintEnd_toEndOf="@+id/imgRoundedSquare3"
         app:layout_constraintStart_toStartOf="@+id/imgRoundedSquare3"
         app:layout_constraintTop_toTopOf="@+id/imgRoundedSquare3" />
+
+    <ImageView
+        android:id="@+id/imgRoundedSquare7"
+        android:layout_width="420dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:alpha="0.1"
+        android:background="@drawable/rounded_square_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backwardButton" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginBottom="35dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgRoundedSquare7"
+        app:layout_constraintEnd_toEndOf="@+id/imgRoundedSquare7"
+        app:layout_constraintStart_toStartOf="@+id/imgRoundedSquare7"
+        app:layout_constraintTop_toTopOf="@+id/imgRoundedSquare7">
+
+        <TextView
+            android:id="@+id/openingDescription"
+            android:layout_width="350dp"
+            android:layout_height="1000dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginEnd="35dp"
+            android:textSize="16sp" />
+
+
+    </ScrollView>
 
     <Button
         android:id="@+id/backwardButton"

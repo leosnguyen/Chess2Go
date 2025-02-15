@@ -77,7 +77,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         });
     }
 
-
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         Fragment selectedFragment = null;
@@ -91,6 +90,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (item.getItemId() == R.id.nav_openings) {
             Intent intent = new Intent(MainActivity.this, OpeningsMenuActivity.class);
             startActivity(intent);
+        } else if (item.getItemId() == R.id.nav_checkmates) {
+            Intent intent = new Intent(MainActivity.this, CheckmatesMenuActivity.class);
+            startActivity(intent);
+        } else if (item.getItemId() == R.id.nav_tactics) {
+            Intent intent = new Intent(MainActivity.this, TacticsMenuActivity.class);
+            startActivity(intent);
+        } else if (item.getItemId() == R.id.nav_puzzles) {
+            Intent intent = new Intent(MainActivity.this, PuzzlesActivity.class);
+            startActivity(intent);
         }
 
         if (selectedFragment != null) {
@@ -103,7 +111,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
+    public void openPuzzles(View view) {
+        startActivity(new Intent(this, PuzzlesActivity.class));
+    }
     public void openOpeningsMenu(View view) {
         startActivity(new Intent(this, OpeningsMenuActivity.class));
     }
+
+    public void openCheckmatesMenu(View view) {
+        startActivity(new Intent(this, CheckmatesMenuActivity.class));
+    }
+
+    public void openTacticsMenu(View view) {
+        startActivity(new Intent(this, TacticsMenuActivity.class));
+    }
+
+    public void openPieces(View view) {
+        startActivity(new Intent(this, PiecesMenuActivity.class));
+    }
 }
+
+// COMMIT

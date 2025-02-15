@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CheckmateDetailActivity">
+
+    <ImageButton
+        android:id="@+id/backButtonCheckmates"
+        style="@style/icon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/btn_back"
+        android:onClick="backToCheckmates"
+        android:src="@drawable/icon_back_arrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/checkmateTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backButtonCheckmates" />
+
+    <ImageView
+        android:id="@+id/imgRoundedSquare5"
+        android:layout_width="420dp"
+        android:layout_height="420dp"
+        android:layout_marginTop="15dp"
+        android:alpha="0.1"
+        android:background="@drawable/rounded_square_chess_window"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkmateTitle" />
+
+    <ImageView
+        android:id="@+id/checkmateImage"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:layout_gravity="center"
+        android:layout_margin="15dp"
+        android:background="@drawable/rounded_corners"
+        android:clipToOutline="true"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/imgRoundedSquare5"
+        app:layout_constraintEnd_toEndOf="@+id/imgRoundedSquare5"
+        app:layout_constraintStart_toStartOf="@+id/imgRoundedSquare5"
+        app:layout_constraintTop_toTopOf="@+id/imgRoundedSquare5" />
+
+    <ImageView
+        android:id="@+id/imgRoundedSquare6"
+        android:layout_width="420dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:alpha="0.1"
+        android:background="@drawable/rounded_square_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backwardButton" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginBottom="35dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgRoundedSquare6"
+        app:layout_constraintEnd_toEndOf="@+id/imgRoundedSquare6"
+        app:layout_constraintStart_toStartOf="@+id/imgRoundedSquare6"
+        app:layout_constraintTop_toTopOf="@+id/imgRoundedSquare6">
+
+        <TextView
+            android:id="@+id/checkmateDescription"
+            android:layout_width="350dp"
+            android:layout_height="1000dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginEnd="35dp"
+            android:textSize="16sp" />
+
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/backwardButton"
+        style="@style/Widget.Material3.Button"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="5dp"
+        android:text="@string/btn_backward"
+        app:layout_constraintEnd_toStartOf="@+id/forwardButton"
+        app:layout_constraintTop_toBottomOf="@+id/imgRoundedSquare5" />
+
+    <Button
+        android:id="@+id/forwardButton"
+        style="@style/Widget.Material3.Button"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/btn_forward"
+        app:layout_constraintEnd_toEndOf="@+id/imgRoundedSquare5"
+        app:layout_constraintTop_toBottomOf="@+id/imgRoundedSquare5" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

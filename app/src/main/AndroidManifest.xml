@@ -6,12 +6,33 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_chess2go"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_chess2go_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Chess2Go"
         tools:targetApi="31">
+        <activity
+            android:name=".PieceDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PiecesMenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PuzzlesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TacticDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TacticsMenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CheckmateDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CheckmatesMenuActivity"
+            android:exported="false" />
         <activity
             android:name=".OpeningDetailActivity"
             android:exported="false" />

@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    style="@style/screen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CheckmatesMenuActivity">
+
+    <ImageView
+        android:id="@+id/imgRoundedSquare2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="30dp"
+        android:alpha="0.1"
+        android:background="@drawable/rounded_square_bg"
+        android:padding="35dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitleCheckmates"
+        app:layout_constraintVertical_bias="0.35" />
+
+    <ImageButton
+        android:id="@+id/backButton"
+        style="@style/icon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/btn_back"
+        android:onClick="backToMenu"
+        android:padding="8dp"
+        android:src="@drawable/icon_back_arrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtTitleCheckmates"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/text_checkmates"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backButton" />
+
+    <Button
+        android:id="@+id/btnCheckmateTwoRooks"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/btn_checkmate_two_rooks"
+        app:layout_constraintEnd_toStartOf="@+id/btnCheckmateKingAndQueen"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitleCheckmates" />
+
+    <Button
+        android:id="@+id/btnCheckmateKingAndQueen"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="50dp"
+        android:text="@string/btn_checkmate_king_and_queen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnCheckmateTwoRooks"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitleCheckmates" />
+
+    <Button
+        android:id="@+id/btnCheckmateKingAndRook"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/btn_checkmate_king_and_rook"
+        app:layout_constraintEnd_toStartOf="@+id/btnCheckmateKingAndTwoBishops"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCheckmateTwoRooks" />
+
+    <Button
+        android:id="@+id/btnCheckmateKingAndTwoBishops"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="50dp"
+        android:text="@string/btn_checkmate_king_and_two_bishops"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnCheckmateKingAndRook"
+        app:layout_constraintTop_toBottomOf="@+id/btnCheckmateKingAndQueen" />
+
+    <Button
+        android:id="@+id/btnCheckmateKingBishopAndKnight"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/btn_checkmate_king_bishop_and_knight"
+        app:layout_constraintEnd_toStartOf="@+id/btnCheckmateArabian"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCheckmateKingAndRook" />
+
+    <Button
+        android:id="@+id/btnCheckmateArabian"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="50dp"
+        android:text="@string/btn_checkmate_arabian"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnCheckmateKingBishopAndKnight"
+        app:layout_constraintTop_toBottomOf="@+id/btnCheckmateKingAndTwoBishops" />
+
+    <Button
+        android:id="@+id/btnCheckmateFools"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/btn_checkmate_fools"
+        app:layout_constraintEnd_toStartOf="@+id/btnCheckmateScholars"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCheckmateKingBishopAndKnight" />
+
+    <Button
+        android:id="@+id/btnCheckmateScholars"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="50dp"
+        android:text="@string/btn_checkmate_scholars"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnCheckmateFools"
+        app:layout_constraintTop_toBottomOf="@+id/btnCheckmateArabian" />
+
+    <Button
+        android:id="@+id/btnCheckmateLegals"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/btn_checkmate_legals"
+        app:layout_constraintEnd_toStartOf="@+id/btnCheckmateBackRank"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCheckmateFools" />
+
+    <Button
+        android:id="@+id/btnCheckmateBackRank"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="50dp"
+        android:text="@string/btn_checkmate_back_rank"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnCheckmateLegals"
+        app:layout_constraintTop_toBottomOf="@+id/btnCheckmateScholars" />
+
+    <Button
+        android:id="@+id/btnCheckmateSmothered"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/btn_checkmate_smothered"
+        app:layout_constraintEnd_toStartOf="@+id/btnCheckmateAnastasias"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCheckmateLegals" />
+
+    <Button
+        android:id="@+id/btnCheckmateAnastasias"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="50dp"
+        android:text="@string/btn_checkmate_anastasias"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnCheckmateSmothered"
+        app:layout_constraintTop_toBottomOf="@+id/btnCheckmateBackRank" />
+
+    <Button
+        android:id="@+id/btnCheckmateEpaulette"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/btn_checkmate_epaulette"
+        app:layout_constraintEnd_toStartOf="@+id/btnCheckmateBodens"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCheckmateSmothered" />
+
+    <Button
+        android:id="@+id/btnCheckmateBodens"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="50dp"
+        android:text="@string/btn_checkmate_bodens"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnCheckmateEpaulette"
+        app:layout_constraintTop_toBottomOf="@+id/btnCheckmateAnastasias" />
+
+    <Button
+        android:id="@+id/btnCheckmateDovetail"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/btn_checkmate_dovetail"
+        app:layout_constraintEnd_toStartOf="@+id/btnCheckmateSwallowsTail"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCheckmateEpaulette" />
+
+    <Button
+        android:id="@+id/btnCheckmateSwallowsTail"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="50dp"
+        android:text="@string/btn_checkmate_swallows_tail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnCheckmateDovetail"
+        app:layout_constraintTop_toBottomOf="@+id/btnCheckmateBodens" />
+
+    <Button
+        android:id="@+id/btnCheckmateOpera"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/btn_checkmate_opera"
+        app:layout_constraintEnd_toStartOf="@+id/btnCheckmateBlackburnes"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCheckmateDovetail" />
+
+    <Button
+        android:id="@+id/btnCheckmateBlackburnes"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="50dp"
+        android:text="@string/btn_checkmate_blackburnes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnCheckmateOpera"
+        app:layout_constraintTop_toBottomOf="@+id/btnCheckmateSwallowsTail" />
+
+    <Button
+        android:id="@+id/btnCheckmateDamianos"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/btn_checkmate_damianos"
+        app:layout_constraintEnd_toStartOf="@+id/btnCheckmateMorphys"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCheckmateOpera" />
+
+    <Button
+        android:id="@+id/btnCheckmateMorphys"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="50dp"
+        android:text="@string/btn_checkmate_morphys"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnCheckmateDamianos"
+        app:layout_constraintTop_toBottomOf="@+id/btnCheckmateBlackburnes" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
