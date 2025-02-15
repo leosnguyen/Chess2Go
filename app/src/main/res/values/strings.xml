@@ -1,0 +1,110 @@
+<resources>
+    <string name="app_name">Chess2Go</string>
+    <string name="title_activity_main">chess2go</string>
+    <string name="text_tld_main">.cz</string>
+    <string name="text_domain_main">chess2go.cz</string>
+
+    <string name="text_chess">Chess</string>
+    <string name="text_openings">Openings</string>
+    <string name="text_checkmates">Checkmates</string>
+    <string name="text_tactics">Tactics</string>
+    <string name="text_puzzles">Puzzles</string>
+
+    <string name="text_fragment_about">Chess2Go provides tools for chess enthusiasts to improve their game. Explore openings, sharpen your tactics, solve puzzles, and master checkmates — all in one app.</string>
+
+    <string name="text_home">Home</string>
+    <string name="text_theme">Theme</string>
+    <string name="text_system">System</string>
+    <string name="text_share">Share</string>
+    <string name="text_about">About</string>
+
+    <string name="text_rotate">Rotate</string>
+    <string name="text_start">Start</string>
+    <string name="text_chess_square">Chess Square</string>
+    <string name="text_score">Score: </string>
+    <string name="text_unrated_score">-/-</string>
+    <string name="text_question_mark">\?</string>
+    <string name="text_square_notation_game">Square Notation Game</string>
+
+
+    <string name="open_nav">Open navigation drawer</string>
+    <string name="close_nav">Close navigation drawer</string>
+
+    <string name="text_kings_pawn">The ancient King Pawn opening, "best by test" according to Bobby Fischer and perhaps the oldest first move in the modern version of chess. This is the most aggressive and most attacking first move because it immediately stakes a claim to the center and frees up the queen and king bishop.</string>
+    <string name="text_queens_gambit">The Queen\'s Gambit is one of the oldest and most reputable 1.d4 openings for White. Unlike 1.e4 openings, the Queen\'s Gambit usually evolves into a strategic game rather than an all-out tactical battle. Despite being around for centuries, this opening is still one of the cornerstones of every elite players\' repertoire. It\'s also an excellent choice for beginners and intermediate players.</string>
+    <string name="text_sicilian">The Sicilian Defense is the most popular response to White\'s 1.e4. Employed by masters and beginners alike, the Sicilian Defense is a reputable and positionally sound opening. Still, the Sicilian is a combative opening that tends to lead to dynamic and sharp positions.</string>
+    <string name="text_french">The French Defense is one of the most popular Black responses to 1.e4. It has consistently been a part of masters\' repertoire since the 1800s and one of the favorites of positional players. Usually leading to slower games, this opening is a good choice for players of all levels.</string>
+
+    <string name="text_default_description">Default</string>
+
+    <string name="desc_rounded_square">Rounded Square</string>
+
+    <string name="btn_back">Back Button</string>
+    <string name="btn_backward">&lt;</string>
+    <string name="btn_forward">&gt;</string>
+
+    <string name="btn_opening_kings_pawn">King\'s Pawn</string>
+    <string name="btn_opening_queens_gambit">Queen\'s Gambit</string>
+    <string name="btn_opening_sicilian">Sicilian</string>
+    <string name="btn_opening_french">French</string>
+    <string name="btn_opening_ruy_lopez">Ruy-López</string>
+    <string name="btn_opening_slav">Slav</string>
+    <string name="btn_opening_caro_kann">Caro-Kann</string>
+    <string name="btn_opening_italian">Italian</string>
+    <string name="btn_opening_kings_indian">King\'s Indian</string>
+    <string name="btn_opening_english">English</string>
+    <string name="btn_opening_nimzo_indian">Nimzo-Indian</string>
+    <string name="btn_opening_pirc">Pirc</string>
+    <string name="btn_opening_petrov">Petrov</string>
+    <string name="btn_opening_grunfeld">Grünfeld</string>
+    <string name="btn_opening_benoni">Benoni</string>
+    <string name="btn_opening_dutch">Dutch</string>
+    <string name="btn_opening_scotch">Scotch</string>
+    <string name="btn_opening_reti">Réti</string>
+    <string name="btn_opening_alekhine">Alekhine</string>
+    <string name="btn_opening_tarrasch">Tarrasch</string>
+
+    <string name="btn_checkmate_two_rooks">Two Rooks</string>
+    <string name="btn_checkmate_king_and_queen">King and Queen</string>
+    <string name="btn_checkmate_king_and_rook">King and Rook</string>
+    <string name="btn_checkmate_king_and_two_bishops">King and 2 Bishops</string>
+    <string name="btn_checkmate_king_bishop_and_knight">King, Bishop and Knight</string>
+    <string name="btn_checkmate_arabian">Arabian</string>
+    <string name="btn_checkmate_fools">Fool\'s</string>
+    <string name="btn_checkmate_scholars">Scholar\'s</string>
+    <string name="btn_checkmate_legals">Legal\'s</string>
+    <string name="btn_checkmate_back_rank">Back Rank</string>
+    <string name="btn_checkmate_smothered">Smothered</string>
+    <string name="btn_checkmate_anastasias">Anastasia\'s</string>
+    <string name="btn_checkmate_epaulette">Epaulette</string>
+    <string name="btn_checkmate_bodens">Boden\'s</string>
+    <string name="btn_checkmate_dovetail">Dovetail</string>
+    <string name="btn_checkmate_swallows_tail">Swallow\'s Tail</string>
+    <string name="btn_checkmate_opera">Opera</string>
+    <string name="btn_checkmate_blackburnes">Blackburne\'s</string>
+    <string name="btn_checkmate_damianos">Damiano\'s</string>
+    <string name="btn_checkmate_morphys">Morphy\'s</string>
+
+    <string name="btn_tactic_fork">Fork/Double Attack</string>
+    <string name="btn_tactic_attacking_f7f2">Attacking f7/f2</string>
+    <string name="btn_tactic_sacrifice">Sacrifice</string>
+    <string name="btn_tactic_simplification">Simplification</string>
+    <string name="btn_tactic_pin">Pin</string>
+    <string name="btn_tactic_skewer">Skewer</string>
+    <string name="btn_tactic_discovered_attack">Discovered Attack/Check</string>
+    <string name="btn_tactic_back_rank">Back Rank</string>
+    <string name="btn_tactic_mating_net">Mating Net</string>
+    <string name="btn_tactic_double_check">Double Check</string>
+    <string name="btn_tactic_pawn_promotion">Pawn Promotion</string>
+    <string name="btn_tactic_zugzwang">Zugzwang</string>
+    <string name="btn_tactic_exchange_sacrifice">Exchange Sacrifice</string>
+    <string name="btn_tactic_vulnerable_king">Vulnerable King</string>
+    <string name="btn_tactic_decoy">Decoy/Deflection</string>
+    <string name="btn_tactic_overloading">Overloading</string>
+    <string name="btn_tactic_trapped_piece">Trapped Piece</string>
+    <string name="btn_tactic_perpetual_check">Perpetual Check</string>
+    <string name="btn_tactic_stalemate">Stalemate</string>
+    <string name="btn_tactic_xray_attack">X-Ray Attack</string>
+
+
+</resources>

@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    style="@style/screen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TacticsMenuActivity">
+
+    <ImageView
+        android:id="@+id/imgRoundedSquare8"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="30dp"
+        android:alpha="0.1"
+        android:background="@drawable/rounded_square_bg"
+        android:padding="35dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitleTactics"
+        app:layout_constraintVertical_bias="0.35" />
+
+    <ImageButton
+        android:id="@+id/backButton"
+        style="@style/icon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/btn_back"
+        android:onClick="backToMenu"
+        android:padding="8dp"
+        android:src="@drawable/icon_back_arrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtTitleTactics"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/text_tactics"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backButton" />
+
+    <Button
+        android:id="@+id/btnTacticFork"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/btn_tactic_fork"
+        app:layout_constraintEnd_toStartOf="@+id/btnTacticAttackingF7F2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitleTactics" />
+
+    <Button
+        android:id="@+id/btnTacticAttackingF7F2"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="50dp"
+        android:text="@string/btn_tactic_attacking_f7f2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnTacticFork"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitleTactics" />
+
+    <Button
+        android:id="@+id/btnTacticSacrifice"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/btn_tactic_sacrifice"
+        app:layout_constraintEnd_toStartOf="@+id/btnTacticSimplification"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnTacticFork" />
+
+    <Button
+        android:id="@+id/btnTacticSimplification"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="50dp"
+        android:text="@string/btn_tactic_simplification"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnTacticSacrifice"
+        app:layout_constraintTop_toBottomOf="@+id/btnTacticAttackingF7F2" />
+
+    <Button
+        android:id="@+id/btnTacticPin"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/btn_tactic_pin"
+        app:layout_constraintEnd_toStartOf="@+id/btnTacticSkewer"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnTacticSacrifice" />
+
+    <Button
+        android:id="@+id/btnTacticSkewer"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="50dp"
+        android:text="@string/btn_tactic_skewer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnTacticPin"
+        app:layout_constraintTop_toBottomOf="@+id/btnTacticSimplification" />
+
+    <Button
+        android:id="@+id/btnTacticDiscoveredAttackCheck"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/btn_tactic_discovered_attack"
+        app:layout_constraintEnd_toStartOf="@+id/btnTacticBackRank"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnTacticPin" />
+
+    <Button
+        android:id="@+id/btnTacticBackRank"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="50dp"
+        android:text="@string/btn_tactic_back_rank"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnTacticDiscoveredAttackCheck"
+        app:layout_constraintTop_toBottomOf="@+id/btnTacticSkewer" />
+
+    <Button
+        android:id="@+id/btnTacticMatingNet"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/btn_tactic_mating_net"
+        app:layout_constraintEnd_toStartOf="@+id/btnTacticDoubleCheck"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnTacticDiscoveredAttackCheck" />
+
+    <Button
+        android:id="@+id/btnTacticDoubleCheck"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="50dp"
+        android:text="@string/btn_tactic_double_check"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnTacticMatingNet"
+        app:layout_constraintTop_toBottomOf="@+id/btnTacticBackRank" />
+
+    <Button
+        android:id="@+id/btnTacticPawnPromotion"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/btn_tactic_pawn_promotion"
+        app:layout_constraintEnd_toStartOf="@+id/btnTacticZugzwang"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnTacticMatingNet" />
+
+    <Button
+        android:id="@+id/btnTacticZugzwang"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="50dp"
+        android:text="@string/btn_tactic_zugzwang"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnTacticPawnPromotion"
+        app:layout_constraintTop_toBottomOf="@+id/btnTacticDoubleCheck" />
+
+    <Button
+        android:id="@+id/btnTacticExchangeSacrifice"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/btn_tactic_exchange_sacrifice"
+        app:layout_constraintEnd_toStartOf="@+id/btnTacticVulnerableKing"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnTacticPawnPromotion" />
+
+    <Button
+        android:id="@+id/btnTacticVulnerableKing"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="50dp"
+        android:text="@string/btn_tactic_vulnerable_king"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnTacticExchangeSacrifice"
+        app:layout_constraintTop_toBottomOf="@+id/btnTacticZugzwang" />
+
+    <Button
+        android:id="@+id/btnTacticDecoy"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/btn_tactic_decoy"
+        app:layout_constraintEnd_toStartOf="@+id/btnTacticOverloading"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnTacticExchangeSacrifice" />
+
+    <Button
+        android:id="@+id/btnTacticOverloading"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="50dp"
+        android:text="@string/btn_tactic_overloading"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnTacticDecoy"
+        app:layout_constraintTop_toBottomOf="@+id/btnTacticVulnerableKing" />
+
+    <Button
+        android:id="@+id/btnTacticTrappedPiece"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/btn_tactic_trapped_piece"
+        app:layout_constraintEnd_toStartOf="@+id/btnTacticPerpetualCheck"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnTacticDecoy" />
+
+    <Button
+        android:id="@+id/btnTacticPerpetualCheck"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="50dp"
+        android:text="@string/btn_tactic_perpetual_check"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnTacticTrappedPiece"
+        app:layout_constraintTop_toBottomOf="@+id/btnTacticOverloading" />
+
+    <Button
+        android:id="@+id/btnTacticStalemate"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/btn_tactic_stalemate"
+        app:layout_constraintEnd_toStartOf="@+id/btnTacticXRayAttack"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnTacticTrappedPiece" />
+
+    <Button
+        android:id="@+id/btnTacticXRayAttack"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="50dp"
+        android:text="@string/btn_tactic_xray_attack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnTacticStalemate"
+        app:layout_constraintTop_toBottomOf="@+id/btnTacticPerpetualCheck" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
