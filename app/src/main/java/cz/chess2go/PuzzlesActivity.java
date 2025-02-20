@@ -17,16 +17,15 @@ import androidx.core.view.WindowInsetsCompat;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Random;
-import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class PuzzlesActivity extends AppCompatActivity {
-
-    public static ArrayList<ImageView> squares = new ArrayList<>();
     public static ArrayList<String> squareNames = new ArrayList<>();
     public static HashMap<String, ImageView> imageViewMap = new HashMap<>();
+    public static boolean isGameStarted = false;
+    public static int randomNumber;
+    public TextView puzzleScoreText;
+    public TextView guessingSquare;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -183,79 +182,6 @@ public class PuzzlesActivity extends AppCompatActivity {
         imageViewMap.put("h7", h7);
         imageViewMap.put("h8", h8);
 
-
-        squares.add(a1);
-        squares.add(a2);
-        squares.add(a3);
-        squares.add(a4);
-        squares.add(a5);
-        squares.add(a6);
-        squares.add(a7);
-        squares.add(a8);
-
-        squares.add(b1);
-        squares.add(b2);
-        squares.add(b3);
-        squares.add(b4);
-        squares.add(b5);
-        squares.add(b6);
-        squares.add(b7);
-        squares.add(b8);
-
-        squares.add(c1);
-        squares.add(c2);
-        squares.add(c3);
-        squares.add(c4);
-        squares.add(c5);
-        squares.add(c6);
-        squares.add(c7);
-        squares.add(c8);
-
-        squares.add(d1);
-        squares.add(d2);
-        squares.add(d3);
-        squares.add(d4);
-        squares.add(d5);
-        squares.add(d6);
-        squares.add(d7);
-        squares.add(d8);
-
-        squares.add(e1);
-        squares.add(e2);
-        squares.add(e3);
-        squares.add(e4);
-        squares.add(e5);
-        squares.add(e6);
-        squares.add(e7);
-        squares.add(e8);
-
-        squares.add(f1);
-        squares.add(f2);
-        squares.add(f3);
-        squares.add(f4);
-        squares.add(f5);
-        squares.add(f6);
-        squares.add(f7);
-        squares.add(f8);
-
-        squares.add(g1);
-        squares.add(g2);
-        squares.add(g3);
-        squares.add(g4);
-        squares.add(g5);
-        squares.add(g6);
-        squares.add(g7);
-        squares.add(g8);
-
-        squares.add(h1);
-        squares.add(h2);
-        squares.add(h3);
-        squares.add(h4);
-        squares.add(h5);
-        squares.add(h6);
-        squares.add(h7);
-        squares.add(h8);
-
         squareNames.add("a1");
         squareNames.add("a2");
         squareNames.add("a3");
@@ -327,52 +253,76 @@ public class PuzzlesActivity extends AppCompatActivity {
         squareNames.add("h6");
         squareNames.add("h7");
         squareNames.add("h8");
-
-        Button startButton = findViewById(R.id.startButton);
     }
 
-    public int startGame(View view) {
+    public void startGame(View view) {
+        isGameStarted = true;
         Random rand = new Random();
-        AtomicInteger rightAnswers = new AtomicInteger(0);
-        int randomNumber;
-        TextView guessingSquare = findViewById(R.id.guessingSquare);
-
-        List<String> remainingSquares = new ArrayList<>(squareNames);
-        List<ImageView> remainingImageViews = new ArrayList<>(squares);
-
-        // Začneme debugováním
-        Log.d("Game", "Game started");
-
-        for (int i = 0; i < remainingSquares.size(); i++) {
-            randomNumber = rand.nextInt(remainingSquares.size());
-            String squareName = remainingSquares.get(randomNumber);
-            ImageView square = remainingImageViews.get(randomNumber);
-
-            guessingSquare.setText(squareName);
-
-            // Logování pro kontrolu, že nastavení OnClickListener probíhá správně
-            Log.d("Game", "Setting OnClickListener for " + squareName);
-
-            if (square != null) {
-                square.setOnClickListener(v -> {
-                    // Debugging kliknutí
-                    Log.d("Game", "Square clicked: " + squareName);
-
-                    // Pokud je odpověď správná, inkrementujeme správné odpovědi
-                    rightAnswers.incrementAndGet();
-                    Log.d("Game", "Right answers: " + rightAnswers.get());
-                });
-            }
-
-            remainingSquares.remove(randomNumber);
-            remainingImageViews.remove(randomNumber);
-        }
-
-        // Na konci vrátíme počet správných odpovědí
-        Log.d("Game", "Game finished. Right answers: " + rightAnswers.get());
-        return rightAnswers.get();
+        randomNumber = rand.nextInt(64);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        guessingSquare.setText(squareNames.get(randomNumber));
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        puzzleScoreText.setText(R.string.text_unrated);
+        Log.d("GAME_STARTED", "Game started.");
     }
 
+    public void showHints(View view) {
+        Button showHintsButton = findViewById(R.id.showHintsButton);
+        TextView hint1 = findViewById(R.id.txtHint1);
+        TextView hint2 = findViewById(R.id.txtHint2);
+        TextView hint3 = findViewById(R.id.txtHint3);
+        TextView hint4 = findViewById(R.id.txtHint4);
+        TextView hint5 = findViewById(R.id.txtHint5);
+        TextView hint6 = findViewById(R.id.txtHint6);
+        TextView hint7 = findViewById(R.id.txtHint7);
+        TextView hint8 = findViewById(R.id.txtHint8);
+        TextView hintA = findViewById(R.id.txtHintA);
+        TextView hintB = findViewById(R.id.txtHintB);
+        TextView hintC = findViewById(R.id.txtHintC);
+        TextView hintD = findViewById(R.id.txtHintD);
+        TextView hintE = findViewById(R.id.txtHintE);
+        TextView hintF = findViewById(R.id.txtHintF);
+        TextView hintG = findViewById(R.id.txtHintG);
+        TextView hintH = findViewById(R.id.txtHintH);
+
+        if (hint1.getVisibility() == View.VISIBLE) {
+            hint1.setVisibility(View.INVISIBLE);
+            hint2.setVisibility(View.INVISIBLE);
+            hint3.setVisibility(View.INVISIBLE);
+            hint4.setVisibility(View.INVISIBLE);
+            hint5.setVisibility(View.INVISIBLE);
+            hint6.setVisibility(View.INVISIBLE);
+            hint7.setVisibility(View.INVISIBLE);
+            hint8.setVisibility(View.INVISIBLE);
+            hintA.setVisibility(View.INVISIBLE);
+            hintB.setVisibility(View.INVISIBLE);
+            hintC.setVisibility(View.INVISIBLE);
+            hintD.setVisibility(View.INVISIBLE);
+            hintE.setVisibility(View.INVISIBLE);
+            hintF.setVisibility(View.INVISIBLE);
+            hintG.setVisibility(View.INVISIBLE);
+            hintH.setVisibility(View.INVISIBLE);
+            showHintsButton.setText(R.string.btn_show_hints);
+        } else {
+            hint1.setVisibility(View.VISIBLE);
+            hint2.setVisibility(View.VISIBLE);
+            hint3.setVisibility(View.VISIBLE);
+            hint4.setVisibility(View.VISIBLE);
+            hint5.setVisibility(View.VISIBLE);
+            hint6.setVisibility(View.VISIBLE);
+            hint7.setVisibility(View.VISIBLE);
+            hint8.setVisibility(View.VISIBLE);
+            hintA.setVisibility(View.VISIBLE);
+            hintB.setVisibility(View.VISIBLE);
+            hintC.setVisibility(View.VISIBLE);
+            hintD.setVisibility(View.VISIBLE);
+            hintE.setVisibility(View.VISIBLE);
+            hintF.setVisibility(View.VISIBLE);
+            hintG.setVisibility(View.VISIBLE);
+            hintH.setVisibility(View.VISIBLE);
+            showHintsButton.setText(R.string.btn_hide_hints);
+        }
+    }
 
     public void backToMenu(View view) {
         Intent intent = new Intent(this, MainActivity.class);
@@ -382,5 +332,1029 @@ public class PuzzlesActivity extends AppCompatActivity {
                 R.anim.slide_out_right
         );
         startActivity(intent, options.toBundle());
+    }
+
+    public void a8(View view) {
+        ImageView a8 = findViewById(R.id.a8);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("a8", "a8 was pressed");
+        if (isGameStarted && a8 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(a8 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void b8(View view) {
+        ImageView b8 = findViewById(R.id.b8);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("b8", "b8 was pressed");
+        if (isGameStarted && b8 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(b8 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void c8(View view) {
+        ImageView c8 = findViewById(R.id.c8);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("c8", "c8 was pressed");
+        if (isGameStarted && c8 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(c8 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void d8(View view) {
+        ImageView d8 = findViewById(R.id.d8);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("d8", "d8 was pressed");
+        if (isGameStarted && d8 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(d8 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void e8(View view) {
+        ImageView e8 = findViewById(R.id.e8);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("e8", "e8 was pressed");
+        if (isGameStarted && e8 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(e8 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void f8(View view) {
+        ImageView f8 = findViewById(R.id.f8);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("f8", "f8 was pressed");
+        if (isGameStarted && f8 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(f8 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void g8(View view) {
+        ImageView g8 = findViewById(R.id.g8);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("g8", "g8 was pressed");
+        if (isGameStarted && g8 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(g8 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void h8(View view) {
+        ImageView h8 = findViewById(R.id.h8);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("h8", "h8 was pressed");
+        if (isGameStarted && h8 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(h8 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void a7(View view) {
+        ImageView a7 = findViewById(R.id.a7);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("a7", "a7 was pressed");
+        if (isGameStarted && a7 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(a7 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void b7(View view) {
+        ImageView b7 = findViewById(R.id.b7);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("b7", "b7 was pressed");
+        if (isGameStarted && b7 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(b7 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void c7(View view) {
+        ImageView c7 = findViewById(R.id.c7);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("c7", "c7 was pressed");
+        if (isGameStarted && c7 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(c7 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void d7(View view) {
+        ImageView d7 = findViewById(R.id.d7);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("d7", "d7 was pressed");
+        if (isGameStarted && d7 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(d7 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void e7(View view) {
+        ImageView e7 = findViewById(R.id.e7);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("e7", "e7 was pressed");
+        if (isGameStarted && e7 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(e7 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void f7(View view) {
+        ImageView f7 = findViewById(R.id.f7);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("f7", "f7 was pressed");
+        if (isGameStarted && f7 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(f7 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void g7(View view) {
+        ImageView g7 = findViewById(R.id.g7);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("g7", "g7 was pressed");
+        if (isGameStarted && g7 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(g7 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void h7(View view) {
+        ImageView h7 = findViewById(R.id.h7);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("h7", "h7 was pressed");
+        if (isGameStarted && h7 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(h7 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void a6(View view) {
+        ImageView a6 = findViewById(R.id.a6);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("a6", "a6 was pressed");
+        if (isGameStarted && a6 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(a6 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void b6(View view) {
+        ImageView b6 = findViewById(R.id.b6);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("b6", "b6 was pressed");
+        if (isGameStarted && b6 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(b6 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void c6(View view) {
+        ImageView c6 = findViewById(R.id.c6);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("c6", "c6 was pressed");
+        if (isGameStarted && c6 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(c6 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void d6(View view) {
+        ImageView d6 = findViewById(R.id.d6);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("d6", "d6 was pressed");
+        if (isGameStarted && d6 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(d6 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void e6(View view) {
+        ImageView e6 = findViewById(R.id.e6);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("e6", "e6 was pressed");
+        if (isGameStarted && e6 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(e6 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void f6(View view) {
+        ImageView f6 = findViewById(R.id.f6);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("f6", "f6 was pressed");
+        if (isGameStarted && f6 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(f6 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void g6(View view) {
+        ImageView g6 = findViewById(R.id.g6);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("g6", "g6 was pressed");
+        if (isGameStarted && g6 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(g6 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void h6(View view) {
+        ImageView h6 = findViewById(R.id.h6);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("h6", "h6 was pressed");
+        if (isGameStarted && h6 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(h6 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void a5(View view) {
+        ImageView a5 = findViewById(R.id.a5);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("a5", "a5 was pressed");
+        if (isGameStarted && a5 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(a5 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void b5(View view) {
+        ImageView b5 = findViewById(R.id.b5);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("b5", "b5 was pressed");
+        if (isGameStarted && b5 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(b5 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void c5(View view) {
+        ImageView c5 = findViewById(R.id.c5);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("c5", "c5 was pressed");
+        if (isGameStarted && c5 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(c5 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void d5(View view) {
+        ImageView d5 = findViewById(R.id.d5);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("d5", "d5 was pressed");
+        if (isGameStarted && d5 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(d5 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void e5(View view) {
+        ImageView e5 = findViewById(R.id.e5);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("e5", "e5 was pressed");
+        if (isGameStarted && e5 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(e5 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void f5(View view) {
+        ImageView f5 = findViewById(R.id.f5);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("f5", "f5 was pressed");
+        if (isGameStarted && f5 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(f5 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void g5(View view) {
+        ImageView g5 = findViewById(R.id.g5);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("g5", "g5 was pressed");
+        if (isGameStarted && g5 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(g5 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void h5(View view) {
+        ImageView h5 = findViewById(R.id.h5);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("h5", "h5 was pressed");
+        if (isGameStarted && h5 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(h5 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void a4(View view) {
+        ImageView a4 = findViewById(R.id.a4);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("a4", "a4 was pressed");
+        if (isGameStarted && a4 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(a4 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void b4(View view) {
+        ImageView b4 = findViewById(R.id.b4);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("b4", "b4 was pressed");
+        if (isGameStarted && b4 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(b4 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void c4(View view) {
+        ImageView c4 = findViewById(R.id.c4);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("c4", "c4 was pressed");
+        if (isGameStarted && c4 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(c4 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void d4(View view) {
+        ImageView d4 = findViewById(R.id.d4);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("d4", "d4 was pressed");
+        if (isGameStarted && d4 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(d4 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void e4(View view) {
+        ImageView e4 = findViewById(R.id.e4);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("e4", "e4 was pressed");
+        if (isGameStarted && e4 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(e4 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void f4(View view) {
+        ImageView f4 = findViewById(R.id.f4);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("f4", "f4 was pressed");
+        if (isGameStarted && f4 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(f4 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void g4(View view) {
+        ImageView g4 = findViewById(R.id.g4);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("g4", "g4 was pressed");
+        if (isGameStarted && g4 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(g4 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void h4(View view) {
+        ImageView h4 = findViewById(R.id.h4);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("h4", "h4 was pressed");
+        if (isGameStarted && h4 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(h4 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void a3(View view) {
+        ImageView a3 = findViewById(R.id.a3);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("a3", "a3 was pressed");
+        if (isGameStarted && a3 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(a3 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void b3(View view) {
+        ImageView b3 = findViewById(R.id.b3);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("b3", "b3 was pressed");
+        if (isGameStarted && b3 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(b3 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void c3(View view) {
+        ImageView c3 = findViewById(R.id.c3);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("c3", "c3 was pressed");
+        if (isGameStarted && c3 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(c3 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void d3(View view) {
+        ImageView d3 = findViewById(R.id.d3);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("d3", "d3 was pressed");
+        if (isGameStarted && d3 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(d3 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void e3(View view) {
+        ImageView e3 = findViewById(R.id.e3);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("e3", "e3 was pressed");
+        if (isGameStarted && e3 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(e3 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void f3(View view) {
+        ImageView f3 = findViewById(R.id.f3);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("f3", "f3 was pressed");
+        if (isGameStarted && f3 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(f3 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void g3(View view) {
+        ImageView g3 = findViewById(R.id.g3);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("g3", "g3 was pressed");
+        if (isGameStarted && g3 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(g3 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void h3(View view) {
+        ImageView h3 = findViewById(R.id.h3);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("h3", "h3 was pressed");
+        if (isGameStarted && h3 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(h3 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void a2(View view) {
+        ImageView a2 = findViewById(R.id.a2);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("a2", "a2 was pressed");
+        if (isGameStarted && a2 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(a2 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void b2(View view) {
+        ImageView b2 = findViewById(R.id.b2);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("b2", "b2 was pressed");
+        if (isGameStarted && b2 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(b2 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void c2(View view) {
+        ImageView c2 = findViewById(R.id.c2);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("c2", "c2 was pressed");
+        if (isGameStarted && c2 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(c2 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void d2(View view) {
+        ImageView d2 = findViewById(R.id.d2);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("d2", "d2 was pressed");
+        if (isGameStarted && d2 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(d2 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void e2(View view) {
+        ImageView e2 = findViewById(R.id.e2);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("e2", "e2 was pressed");
+        if (isGameStarted && e2 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(e2 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void f2(View view) {
+        ImageView f2 = findViewById(R.id.f2);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("f2", "f2 was pressed");
+        if (isGameStarted && f2 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(f2 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void g2(View view) {
+        ImageView g2 = findViewById(R.id.g2);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("g2", "g2 was pressed");
+        if (isGameStarted && g2 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(g2 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void h2(View view) {
+        ImageView h2 = findViewById(R.id.h2);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("h2", "h2 was pressed");
+        if (isGameStarted && h2 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(h2 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void a1(View view) {
+        ImageView a1 = findViewById(R.id.a1);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("a1", "a1 was pressed");
+        if (isGameStarted && a1 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(a1 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void b1(View view) {
+        ImageView b1 = findViewById(R.id.b1);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("b1", "b1 was pressed");
+        if (isGameStarted && b1 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(b1 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void c1(View view) {
+        ImageView c1 = findViewById(R.id.c1);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("c1", "c1 was pressed");
+        if (isGameStarted && c1 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(c1 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void d1(View view) {
+        ImageView d1 = findViewById(R.id.d1);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("d1", "d1 was pressed");
+        if (isGameStarted && d1 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(d1 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void e1(View view) {
+        ImageView e1 = findViewById(R.id.e1);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("e1", "e1 was pressed");
+        if (isGameStarted && e1 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(e1 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void f1(View view) {
+        ImageView f1 = findViewById(R.id.f1);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("f1", "f1 was pressed");
+        if (isGameStarted && f1 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(f1 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void g1(View view) {
+        ImageView g1 = findViewById(R.id.g1);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("g1", "g1 was pressed");
+        if (isGameStarted && g1 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(g1 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
+    }
+
+    public void h1(View view) {
+        ImageView h1 = findViewById(R.id.h1);
+        puzzleScoreText = findViewById(R.id.puzzleScoreText);
+        guessingSquare = findViewById(R.id.guessingSquare);
+        Log.d("h1", "h1 was pressed");
+        if (isGameStarted && h1 == imageViewMap.get(squareNames.get(randomNumber))) {
+            puzzleScoreText.setText(R.string.text_correct);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        } else if (isGameStarted && !(h1 == imageViewMap.get(squareNames.get(randomNumber)))) {
+            puzzleScoreText.setText(R.string.text_wrong);
+            guessingSquare.setText(null);
+            isGameStarted = false;
+        }
     }
 }

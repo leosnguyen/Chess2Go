@@ -18,11 +18,11 @@ import androidx.core.view.WindowInsetsCompat;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TacticDetailActivity extends AppCompatActivity {
+public class PieceDetailActivity extends AppCompatActivity {
 
     private List<Integer> imageResIds;
     private int currentIndex = 0;
-    private ImageView tacticImage;
+    private ImageView pieceImage;
     private Button backwardButton;
     private Button forwardButton;
 
@@ -30,16 +30,16 @@ public class TacticDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_tactic_detail);
+        setContentView(R.layout.activity_piece_detail);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
-        tacticImage = findViewById(R.id.tacticImage);
-        TextView tacticTitle = findViewById(R.id.tacticTitle);
-        TextView tacticDescription = findViewById(R.id.tacticDescription);
+        pieceImage = findViewById(R.id.pieceImage);
+        TextView pieceTitle = findViewById(R.id.pieceTitle);
+        TextView pieceDescription = findViewById(R.id.pieceDescription);
 
         backwardButton = findViewById(R.id.backwardButton);
         forwardButton = findViewById(R.id.forwardButton);
@@ -54,8 +54,8 @@ public class TacticDetailActivity extends AppCompatActivity {
             imageResIds.add(R.drawable.default_image);
         }
 
-        tacticTitle.setText(title);
-        tacticDescription.setText(description);
+        pieceTitle.setText(title);
+        pieceDescription.setText(description);
 
         if (!imageResIds.isEmpty()) {
             updateImage();
@@ -68,7 +68,7 @@ public class TacticDetailActivity extends AppCompatActivity {
     }
 
     private void updateImage() {
-        tacticImage.setImageResource(imageResIds.get(currentIndex));
+        pieceImage.setImageResource(imageResIds.get(currentIndex));
     }
 
     private void showPreviousImage() {
@@ -111,8 +111,8 @@ public class TacticDetailActivity extends AppCompatActivity {
         }
     }
 
-    public void backToTactics(View view) {
-        Intent intent = new Intent(this, TacticsMenuActivity.class);
+    public void backToPieces(View view) {
+        Intent intent = new Intent(this, PiecesMenuActivity.class);
         ActivityOptions options = ActivityOptions.makeCustomAnimation(
                 this,
                 R.anim.slide_in_left,

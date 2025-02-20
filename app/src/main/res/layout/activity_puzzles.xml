@@ -48,8 +48,8 @@
 
     <ImageView
         android:id="@+id/imgRoundedSquare11"
-        android:layout_width="420dp"
-        android:layout_height="420dp"
+        android:layout_width="427dp"
+        android:layout_height="427dp"
         android:layout_marginTop="15dp"
         android:alpha="0.3"
         android:background="@drawable/rounded_square_chess_window"
@@ -72,7 +72,7 @@
         app:layout_constraintTop_toTopOf="@+id/imgRoundedSquare11" />
 
     <GridLayout
-        android:id="@+id/fhessboard"
+        android:id="@+id/chessboard"
         android:layout_width="400dp"
         android:layout_height="400dp"
         android:columnCount="8"
@@ -88,7 +88,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/a8"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="a8" />
 
         <ImageView
             android:id="@+id/b8"
@@ -96,7 +97,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/b8"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="b8" />
 
         <ImageView
             android:id="@+id/c8"
@@ -104,7 +106,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/c8"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="c8" />
 
         <ImageView
             android:id="@+id/d8"
@@ -112,7 +115,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/d8"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="d8" />
 
         <ImageView
             android:id="@+id/e8"
@@ -120,7 +124,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/e8"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="e8" />
 
         <ImageView
             android:id="@+id/f8"
@@ -128,7 +133,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/f8"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="f8" />
 
         <ImageView
             android:id="@+id/g8"
@@ -136,7 +142,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/g8"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="g8" />
 
         <ImageView
             android:id="@+id/h8"
@@ -144,7 +151,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/h8"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="h8" />
 
         <ImageView
             android:id="@+id/a7"
@@ -152,7 +160,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/a7"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="a7" />
 
         <ImageView
             android:id="@+id/b7"
@@ -160,7 +169,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/b7"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="b7" />
 
         <ImageView
             android:id="@+id/c7"
@@ -168,7 +178,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/c7"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="c7" />
 
         <ImageView
             android:id="@+id/d7"
@@ -176,7 +187,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/d7"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="d7" />
 
         <ImageView
             android:id="@+id/e7"
@@ -184,7 +196,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/e7"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="e7" />
 
         <ImageView
             android:id="@+id/f7"
@@ -192,7 +205,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/f7"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="f7" />
 
         <ImageView
             android:id="@+id/g7"
@@ -200,7 +214,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/g7"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="g7" />
 
         <ImageView
             android:id="@+id/h7"
@@ -208,7 +223,9 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/h7"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="h7" />
+
 
         <ImageView
             android:id="@+id/a6"
@@ -216,7 +233,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/a6"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="a6" />
 
         <ImageView
             android:id="@+id/b6"
@@ -224,7 +242,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/b6"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="b6" />
 
         <ImageView
             android:id="@+id/c6"
@@ -232,7 +251,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/c6"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="c6" />
 
         <ImageView
             android:id="@+id/d6"
@@ -240,7 +260,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/d6"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="d6" />
 
         <ImageView
             android:id="@+id/e6"
@@ -248,7 +269,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/e6"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="e6" />
 
         <ImageView
             android:id="@+id/f6"
@@ -256,7 +278,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/f6"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="f6" />
 
         <ImageView
             android:id="@+id/g6"
@@ -264,7 +287,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/g6"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="g6" />
 
         <ImageView
             android:id="@+id/h6"
@@ -272,7 +296,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/h6"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="h6" />
 
         <ImageView
             android:id="@+id/a5"
@@ -280,7 +305,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/a5"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="a5" />
 
         <ImageView
             android:id="@+id/b5"
@@ -288,7 +314,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/b5"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="b5" />
 
         <ImageView
             android:id="@+id/c5"
@@ -296,7 +323,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/c5"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="c5" />
 
         <ImageView
             android:id="@+id/d5"
@@ -304,7 +332,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/d5"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="d5" />
 
         <ImageView
             android:id="@+id/e5"
@@ -312,7 +341,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/e5"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="e5" />
 
         <ImageView
             android:id="@+id/f5"
@@ -320,7 +350,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/f5"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="f5" />
 
         <ImageView
             android:id="@+id/g5"
@@ -328,7 +359,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/g5"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="g5" />
 
         <ImageView
             android:id="@+id/h5"
@@ -336,7 +368,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/h5"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="h5" />
 
         <ImageView
             android:id="@+id/a4"
@@ -344,7 +377,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/a4"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="a4" />
 
         <ImageView
             android:id="@+id/b4"
@@ -352,7 +386,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/b4"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="b4" />
 
         <ImageView
             android:id="@+id/c4"
@@ -360,7 +395,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/c4"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="c4" />
 
         <ImageView
             android:id="@+id/d4"
@@ -368,7 +404,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/d4"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="d4" />
 
         <ImageView
             android:id="@+id/e4"
@@ -376,7 +413,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/e4"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="e4" />
 
         <ImageView
             android:id="@+id/f4"
@@ -384,7 +422,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/f4"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="f4" />
 
         <ImageView
             android:id="@+id/g4"
@@ -392,7 +431,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/g4"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="g4" />
 
         <ImageView
             android:id="@+id/h4"
@@ -400,7 +440,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/h4"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="h4" />
 
         <ImageView
             android:id="@+id/a3"
@@ -408,7 +449,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/a3"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="a3" />
 
         <ImageView
             android:id="@+id/b3"
@@ -416,7 +458,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/b3"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="b3" />
 
         <ImageView
             android:id="@+id/c3"
@@ -424,7 +467,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/c3"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="c3" />
 
         <ImageView
             android:id="@+id/d3"
@@ -432,7 +476,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/d3"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="d3" />
 
         <ImageView
             android:id="@+id/e3"
@@ -440,7 +485,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/e3"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="e3" />
 
         <ImageView
             android:id="@+id/f3"
@@ -448,7 +494,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/f3"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="f3" />
 
         <ImageView
             android:id="@+id/g3"
@@ -456,7 +503,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/g3"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="g3" />
 
         <ImageView
             android:id="@+id/h3"
@@ -464,7 +512,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/h3"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="h3" />
 
         <ImageView
             android:id="@+id/a2"
@@ -472,7 +521,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/a2"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="a2" />
 
         <ImageView
             android:id="@+id/b2"
@@ -480,7 +530,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/b2"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="b2" />
 
         <ImageView
             android:id="@+id/c2"
@@ -488,7 +539,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/c2"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="c2" />
 
         <ImageView
             android:id="@+id/d2"
@@ -496,7 +548,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/d2"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="d2" />
 
         <ImageView
             android:id="@+id/e2"
@@ -504,7 +557,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/e2"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="e2" />
 
         <ImageView
             android:id="@+id/f2"
@@ -512,7 +566,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/f2"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="f2" />
 
         <ImageView
             android:id="@+id/g2"
@@ -520,7 +575,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/g2"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="g2" />
 
         <ImageView
             android:id="@+id/h2"
@@ -528,7 +584,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/h2"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="h2" />
 
         <ImageView
             android:id="@+id/a1"
@@ -536,7 +593,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/a1"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="a1" />
 
         <ImageView
             android:id="@+id/b1"
@@ -544,7 +602,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/b1"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="b1" />
 
         <ImageView
             android:id="@+id/c1"
@@ -552,7 +611,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/c1"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="c1" />
 
         <ImageView
             android:id="@+id/d1"
@@ -560,7 +620,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/d1"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="d1" />
 
         <ImageView
             android:id="@+id/e1"
@@ -568,7 +629,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/e1"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="e1" />
 
         <ImageView
             android:id="@+id/f1"
@@ -576,7 +638,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/f1"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="f1" />
 
         <ImageView
             android:id="@+id/g1"
@@ -584,7 +647,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/g1"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="g1" />
 
         <ImageView
             android:id="@+id/h1"
@@ -592,7 +656,8 @@
             android:layout_height="50dp"
             android:layout_gravity="fill"
             android:background="@drawable/h1"
-            android:contentDescription="@string/text_chess_square" />
+            android:contentDescription="@string/text_chess_square"
+            android:onClick="h1" />
 
 
     </GridLayout>
@@ -603,19 +668,20 @@
         android:layout_height="50dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
-        android:text="@string/text_score"
+        android:text="@string/text_result"
         android:textSize="25sp"
         app:layout_constraintStart_toStartOf="@+id/imgRoundedSquare11"
         app:layout_constraintTop_toBottomOf="@+id/imgRoundedSquare11" />
 
     <TextView
-        android:id="@+id/puzzleScoreNumber"
+        android:id="@+id/puzzleScoreText"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_marginStart="5dp"
         android:layout_marginTop="10dp"
-        android:text="@string/text_unrated_score"
+        android:text="@string/text_unrated"
         android:textSize="25sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/puzzleScore"
         app:layout_constraintTop_toBottomOf="@+id/imgRoundedSquare11" />
 
@@ -626,8 +692,205 @@
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:onClick="startGame"
-        android:text="@string/text_start"
+        android:text="@string/btn_start"
         app:layout_constraintEnd_toEndOf="@+id/imgRoundedSquare11"
         app:layout_constraintTop_toBottomOf="@+id/imgRoundedSquare11" />
+
+    <Button
+        android:id="@+id/showHintsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="5dp"
+        android:onClick="showHints"
+        android:text="@string/btn_hide_hints"
+        app:layout_constraintEnd_toStartOf="@+id/startButton"
+        app:layout_constraintTop_toBottomOf="@+id/imgRoundedSquare11" />
+
+    <TextView
+        android:id="@+id/txtHint1"
+        android:layout_width="25dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="@string/text_1"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/puzzleImage"
+        app:layout_constraintEnd_toStartOf="@+id/puzzleImage"
+        app:layout_constraintStart_toStartOf="@+id/imgRoundedSquare11" />
+
+    <TextView
+        android:id="@+id/txtHint2"
+        android:layout_width="25dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="@string/text_2"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtHint1"
+        app:layout_constraintEnd_toStartOf="@+id/puzzleImage"
+        app:layout_constraintStart_toStartOf="@+id/imgRoundedSquare11" />
+
+    <TextView
+        android:id="@+id/txtHint3"
+        android:layout_width="25dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="@string/text_3"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtHint2"
+        app:layout_constraintEnd_toStartOf="@+id/puzzleImage"
+        app:layout_constraintStart_toStartOf="@+id/imgRoundedSquare11" />
+
+    <TextView
+        android:id="@+id/txtHint4"
+        android:layout_width="25dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="@string/text_4"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtHint3"
+        app:layout_constraintEnd_toStartOf="@+id/puzzleImage"
+        app:layout_constraintStart_toStartOf="@+id/imgRoundedSquare11" />
+
+    <TextView
+        android:id="@+id/txtHint5"
+        android:layout_width="25dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="@string/text_5"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtHint4"
+        app:layout_constraintEnd_toStartOf="@+id/puzzleImage"
+        app:layout_constraintStart_toStartOf="@+id/imgRoundedSquare11" />
+
+    <TextView
+        android:id="@+id/txtHint6"
+        android:layout_width="25dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="@string/text_6"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtHint5"
+        app:layout_constraintEnd_toStartOf="@+id/puzzleImage"
+        app:layout_constraintStart_toStartOf="@+id/imgRoundedSquare11" />
+
+    <TextView
+        android:id="@+id/txtHint7"
+        android:layout_width="25dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="@string/text_7"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtHint6"
+        app:layout_constraintEnd_toStartOf="@+id/puzzleImage"
+        app:layout_constraintStart_toStartOf="@+id/imgRoundedSquare11" />
+
+    <TextView
+        android:id="@+id/txtHint8"
+        android:layout_width="25dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="@string/text_8"
+        android:textSize="12sp"
+        android:layout_marginBottom="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtHint7"
+        app:layout_constraintEnd_toStartOf="@+id/puzzleImage"
+        app:layout_constraintStart_toStartOf="@+id/imgRoundedSquare11" />
+
+    <TextView
+        android:id="@+id/txtHintA"
+        android:layout_width="50dp"
+        android:layout_height="25dp"
+        android:gravity="center"
+        android:text="@string/text_a"
+        android:textSize="12sp"
+        android:layout_marginBottom="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgRoundedSquare11"
+        app:layout_constraintStart_toStartOf="@+id/puzzleImage"
+        app:layout_constraintTop_toBottomOf="@+id/puzzleImage" />
+
+    <TextView
+        android:id="@+id/txtHintB"
+        android:layout_width="50dp"
+        android:layout_height="25dp"
+        android:gravity="center"
+        android:text="@string/text_b"
+        android:textSize="12sp"
+        android:layout_marginBottom="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgRoundedSquare11"
+        app:layout_constraintStart_toEndOf="@+id/txtHintA"
+        app:layout_constraintTop_toBottomOf="@+id/puzzleImage" />
+
+    <TextView
+        android:id="@+id/txtHintC"
+        android:layout_width="50dp"
+        android:layout_height="25dp"
+        android:gravity="center"
+        android:text="@string/text_c"
+        android:textSize="12sp"
+        android:layout_marginBottom="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgRoundedSquare11"
+        app:layout_constraintStart_toEndOf="@+id/txtHintB"
+        app:layout_constraintTop_toBottomOf="@+id/puzzleImage" />
+
+    <TextView
+        android:id="@+id/txtHintD"
+        android:layout_width="50dp"
+        android:layout_height="25dp"
+        android:gravity="center"
+        android:text="@string/text_d"
+        android:textSize="12sp"
+        android:layout_marginBottom="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgRoundedSquare11"
+        app:layout_constraintStart_toEndOf="@+id/txtHintC"
+        app:layout_constraintTop_toBottomOf="@+id/puzzleImage" />
+
+    <TextView
+        android:id="@+id/txtHintE"
+        android:layout_width="50dp"
+        android:layout_height="25dp"
+        android:gravity="center"
+        android:text="@string/text_e"
+        android:textSize="12sp"
+        android:layout_marginBottom="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgRoundedSquare11"
+        app:layout_constraintStart_toEndOf="@+id/txtHintD"
+        app:layout_constraintTop_toBottomOf="@+id/puzzleImage" />
+
+    <TextView
+        android:id="@+id/txtHintF"
+        android:layout_width="50dp"
+        android:layout_height="25dp"
+        android:gravity="center"
+        android:text="@string/text_f"
+        android:textSize="12sp"
+        android:layout_marginBottom="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgRoundedSquare11"
+        app:layout_constraintStart_toEndOf="@+id/txtHintE"
+        app:layout_constraintTop_toBottomOf="@+id/puzzleImage" />
+
+    <TextView
+        android:id="@+id/txtHintG"
+        android:layout_width="50dp"
+        android:layout_height="25dp"
+        android:gravity="center"
+        android:text="@string/text_g"
+        android:textSize="12sp"
+        android:layout_marginBottom="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgRoundedSquare11"
+        app:layout_constraintStart_toEndOf="@+id/txtHintF"
+        app:layout_constraintTop_toBottomOf="@+id/puzzleImage" />
+
+    <TextView
+        android:id="@+id/txtHintH"
+        android:layout_width="50dp"
+        android:layout_height="25dp"
+        android:gravity="center"
+        android:text="@string/text_h"
+        android:textSize="12sp"
+        android:layout_marginBottom="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgRoundedSquare11"
+        app:layout_constraintStart_toEndOf="@+id/txtHintG"
+        app:layout_constraintTop_toBottomOf="@+id/puzzleImage" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

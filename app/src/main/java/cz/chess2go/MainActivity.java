@@ -77,7 +77,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         });
     }
 
-    // ahoj
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         Fragment selectedFragment = null;
@@ -112,6 +111,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
+    public void openPuzzles(View view) {
+        startActivity(new Intent(this, PuzzlesActivity.class));
+    }
     public void openOpeningsMenu(View view) {
         startActivity(new Intent(this, OpeningsMenuActivity.class));
     }
@@ -124,7 +126,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         startActivity(new Intent(this, TacticsMenuActivity.class));
     }
 
-    public void openPuzzles(View view) {
-        startActivity(new Intent(this, PuzzlesActivity.class));
+    public void openPieces(View view) {
+        startActivity(new Intent(this, PiecesMenuActivity.class));
     }
 }
